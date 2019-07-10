@@ -28,7 +28,7 @@ This repository contains the following files and folders:
 * [example-data-unreified.ttl](example-data-unreified.ttl) - the Linkset's links as triples, unreified
 * [data.ttl](data.ttl) - this Linkset's links as an RDF (turtle) file
 * [data-unreified.ttl](data-unreified.ttl) - the Linkset's links as triples, unreified
-* [methods/](methods/) - a folder containing the interim correspondences.xlsx file used for correspondence transpcription from the LGPC PDF document and a Python script to turn data-flat.ttl into data.ttl
+* [methods/](methods/) - a folder containing the interim correspondences.xlsx file used for correspondence transpcription from the LGPC PDF document and a Python script to turn data-unreified.ttl into data.ttl
 
 
 ## Rights & License
