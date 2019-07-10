@@ -1,0 +1,56 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix loci: <http://linked.data.gov.au/def/loci#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix : <http://linked.data.gov.au/dataset/gpclgpc/statement/> .
+@prefix method: <http://linked.data.gov.au/dataset/gpclgpc/method> .
+@prefix nick: <http://linked.data.gov.au/dataset/gpclgpc/nick> .
+
+@prefix gpc: <http://linked.data.gov.au/def/gpc/> .
+@prefix lgpc: <http://linked.data.gov.au/def/lgpc/> .
+
+
+<http://linked.data.gov.au/dataset/gpclgpc>
+    a loci:Linkset ;
+    dct:title "LGPC / COFOG Linkset" ;
+    dct:description """This Linkset contains [SKOS mapping properties](https://www.w3.org/TR/skos-reference/#mapping) between Concepts in the [GPC](http://linked.data.gov.au/def/gpc) and Concepts in the [LGPC](http://linked.data.gov.au/def/lgpc) vocabularies.
+
+GPC, "Government Purpose Classification" is an [Australian Bureau of Statistics (ABS)](https://www.abs.gov.au) a vocabulary of classifiers for use in the collection, analysis and dissemination of local government finance statistics in Australia. It is online as a webpage as the [Revised Government Purpose Classification 2006](https://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/5514.0.55.001Appendix92005).
+
+LGPC, "Local Government Purpose Classification" is an [Australian Bureau of Statistics (ABS)](https://www.abs.gov.au) a vocabulary of classifiers for use in the collection, analysis and dissemination of local government finance statistics in Australia. It is online as a webpage as the [Local Government Purpose Classification, 2008](https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/5514.0.55.0022008).
+
+The original LGPC document publication, linked to immediately above, contains the correspondence information used for this Linkset."""@en ;
+    dct:creator nick: ;
+    dct:created "2019-07-10"^^xsd:date ;
+    # dct:issued ""^^xsd:date ; # not given yet
+    # dct:modified ""^^xsd:date ; # not given yet
+    void:subjectsTarget <http://linked.data.gov.au/def/gpc> ;
+    void:linkPredicate skos:broadMatch , skos:exactMatch , skos:narrowMatch ;
+    void:objectsTarget <http://linked.data.gov.au/def/lgpc> ;
+    loci:hadGenerationMethod method: .
+
+
+method: a prov:Plan ;
+    rdfs:label "Transcription from Source" ;
+    rdfs:seeAlso <https://github.com/CSIRO-enviro-informatics/gpclgpc-linkset/method> ;
+    rdfs:comment "The method used to create this Linkset was a manual transcription of correspondences provided by the ABS with the publication of the LGPC. See the code repository containing this Linkset for a copy of that ABS publication. the COFOG Correspondences are given on pages 46-50. The correspondences, as transcribed from the PDF document, are presented in the Excel file correspondences.xlsx in the methods folder of this vocab's repository." ;
+    prov:wasAttributedTo nick: ;
+    prov:generatedAtTime "2019-07-01"^^xsd:date .
+
+
+nick:
+    a owl:NamedIndividual , sdo:Person ;
+    sdo:email "nicholas.car@surroundaustralia.com" ;
+    sdo:identifier <http://orcid.org/0000-0002-8742-7730> ;
+    sdo:memberOf [
+        rdfs:seeAlso <https://surroundaustralia.com> ;
+        sdo:name "SURROUND Australia Pty Ltd"
+    ] ;
+    sdo:name "Nicholas J. Car" .

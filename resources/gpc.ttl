@@ -1,0 +1,1532 @@
+@prefix : <http://linked.data.gov.au/def/gpc/> .
+@prefix cs: <http://linked.data.gov.au/def/gpc> .
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+cs: a skos:ConceptScheme ;
+  rdfs:label "Government Purpose Classification"@en ;
+  dct:publisher [
+    sdo:name "Australian Bureau of Statistics" ;
+    sdo:identifier <http://catalogue.linked.data.gov.au/org/abs> ;
+  ] ;
+  dct:contributor [
+    sdo:name "Nicholas J. Car" ;
+    sdo:identifier <http://orcid.org/0000-0002-8742-7730> ;
+    sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
+    sdo:memberOf [
+        a sdo:Organization ;
+        sdo:name "SURROUND Australia Pty Ltd" ;
+        sdo:taxID "93 111 971 316" ;
+        rdfs:seeAlso <https://www.surroundaustralia.com> ;
+    ] ;
+  ] ;
+  dc:source "This vocabulary's content is taken directly from the ABS' publication 5514.0.55.001, Government Purpose Classification" ;
+  rdfs:seeAlso <https://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/5514.0.55.001Appendix92005> ;
+  dct:created "2019-07-06"^^xsd:date ;
+  dct:modified "2019-07-11"^^xsd:date ;
+  rdfs:comment """This is a SKOS representation of the Australian Bureau of Statistics (ABS)'s Government Purpose Classification (GPC) for use in the collection, analysis and dissemination of local government finance statistics in Australia.'""";
+owl:versionInfo "As per ABS source data, no additions except for some sub-sub groups have been created for dividing large subgroups and where the subgroups contained segmented descriptions that lead to easy subsubgroup creation." .
+
+
+:01
+    a skos:Concept ;
+    skos:topConceptOf cs: ;
+    skos:prefLabel "General public services"@en ;
+    skos:narrower :011 , :019 .
+
+:011
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Government superannuation benefits"@en ;
+    skos:narrower :0110 .
+
+:0110
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Government superannuation benefits"@en ;
+    skos:definition """<p>Under cash GFS, all government superannuation transactions were classified to the one category in general public services. However, under an accruals GFS, superannuation transactions should be classified to specific GPCs if the data is available. Otherwise this subgroup may be used.</p>
+<p>Includes outlays on:<br />
+Payments under Commonwealth, State and Local government superannuation schemes to government employees in general public services.</p>
+<p>Excludes outlays on:<br />
+Payments under Commonwealth, State and Local government superannuation schemes to government employees not in general public services that can be allocated to specific GPCs.</p>"""^^rdf:HTML .
+
+
+:019
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other general public services"@en ;
+    skos:narrower :0190 .
+
+:0190
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other general public services"@en ;
+    skos:definition "Outlays on administration, support, regulation, research, operation, etc. of general public services. General public services include legislative and executive affairs, financial and fiscal affairs, external affairs, foreign economic aid, general research and general services."@en ;
+    skos:narrower :01901 , :01902 , :01903 , :01904 , :01905 , :01906 .
+
+
+:01901
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Legislative and executive affairs"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Parliaments and councils; governor-general, governor and mayoral offices; conduct of elections and maintenance of registers of voters; legislative drafting offices; libraries and other reference services that serve the legislative bodies; permanent and ad hoc commissions and committees created by, or acting on behalf of, the legislature; and, ministerial departments, local government offices and inter-departmental committees not concerned with a specific function.</p>
+<p>Excludes outlays on:<br />
+Ministerial departments, local government offices and inter-departmental committees concerned with a specific function.</p>"""^^rdf:HTML .
+
+:01902
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Financial and fiscal affairs"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Collection of taxes, including customs duties; management of public funds and public debt; departmental monitoring and control of monetary and fiscal policy; and, formulation, review, etc. of government budgets.</p>
+<p>Exclude outlays on:<br />
+Collection of licences, fees and fines which are associated with a specific function; and, underwriting and floating of government loans and interest payments classified to GPC 1410.</p>"""^^rdf:HTML .
+
+:01903
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "External affairs"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Departments concerned with foreign affairs and diplomatic and consular missions stationed abroad or at offices of international organisations; information and cultural activities intended for distribution overseas; contributions to meet operating expenses of international organisations; support for research into foreign policy; and, issuing of passports and visas.</p>
+<p>Excludes outlays on:<br />
+Military aid to foreign countries and military units stationed abroad classified to GPC 0200; production of cultural material intended for overseas broadcasting classified to GPC 0830; and, foreign trade offices, international financial affairs and other foreign commercial or technical affairs classified to GPC 1390.</p>"""^^rdf:HTML .
+
+:01904
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Foreign economic aid"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Offices and other units administering non-military aid to developing countries; grants, advances, technical assistance and training programs for foreign nationals; foreign economic aid through international organisations; and, contributions in cash or in kind to economic development funds administered by international regional or other multinational organisations.</p>
+<p>Excludes outlays on:<br />
+Military aid classified to GPC 0200; and, aid to international peace-keeping operations classified to GPC 0200.</p>"""^^rdf:HTML .
+
+:01905
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "General research"@en ;
+    skos:definition """<p>Outlays on administration, support, operation, etc. of research directed towards the increase in scientific knowledge or discovery of new fields of investigation, not connected with a specific function.</p>
+<p>Includes outlays on:<br />
+Multi-disciplinary research, such as oceanography; and, single discipline research.</p>
+<p>Excludes outlays on:<br />
+Applied research which is undertaken with a specific purpose in mind, for example, applied research into plant diseases or other destructive agents classified to GPC 1010.</p>"""^^rdf:HTML .
+
+:01906
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "General services"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Overall economic and social planning and statistical services not connected with a specific function; offices, bureaux, or program units which formulate, co-ordinate and frequently monitor the implementation of overall economic and social policies programs; development and implementation of general personnel policies and procedures; centralised supply and purchasing services that cannot be split and allocated to specific functions; repairs and maintenance; central motor pools; maintenance of government archives not connected with libraries; and, administration of Indian Ocean and Pacific Ocean Territories and non-self governing territories where outlays are not elsewhere classified.</p>
+<p>Excludes outlays on:<br />
+Personnel and other general services connected with a specific function.</p>"""^^rdf:HTML .@prefix : <http://linked.data.gov.au/def/gpc/> .
+
+
+:02
+    a skos:Concept ;
+    skos:topConceptOf cs: ;
+    skos:prefLabel "Defence"@en ;
+    skos:narrower :020 .
+
+:020
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Defence"@en ;
+    skos:narrower :0200 .
+
+:0200
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Defence"@en ;
+    skos:definition "Outlays on administration, supervision, operation and support of military and civil defence affairs, foreign military aid and defence research."@en ;
+    skos:narrower :02001 , :02002 , :02003 .
+
+:0200
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Military and civil defence affairs"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Retirement and pension plans for military personnel and their survivors under contributory schemes whether or not funded; payments under the Defence Forces Retirement and Death Benefits Scheme; land, sea, air and reservist combat personnel; engineering, transport, communications, intelligence, training and recruitment and other non-combatant personnel and associated services; provision of equipment, structures and supplies; base hospitals and military schools and colleges; dissemination of information; and, civil defence personnel and acquiring materials and equipment.</p>
+<p>Excludes outlays on:<br />
+Pensions and other benefits paid to ex-service personnel to compensate for invalidity and other permanent disability resulting from service in the defence forces, and to war widows and war orphans classified to GPC 0610; old age pensions, disability benefits, etc. paid through the general social security system to ex-military personnel, classified to GPC 0610; and, food, materials, equipment, etc. used for emergency peace-time disasters classified to GPC 0629 or GPC 1430.</p>"""^^rdf:HTML .
+
+:0200
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Foreign military aid"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Military aid missions accredited to foreign governments or attached to international military organisations; and, military aid grants and advances and contributions to international 	peace-keeping forces including assignment of manpower.</p>"""^^rdf:HTML .
+
+:0200
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Defence research"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Research and experimental development related to the armed forces and civil defence; development of new and improved equipment; improvements in tactics and strategies; and, other research and development related to defence.</p>"""^^rdf:HTML .
+
+
+:03
+    a skos:Concept ;
+    skos:topConceptOf cs: ;
+    skos:prefLabel "Public order and safety"@en ;
+    skos:narrower :031 , :032 , :033 , :039 .
+
+:031
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Police and fire protection services"@en ;
+    skos:narrower :0311 .
+
+:0311
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Police services"@en ;
+    skos:definition """<p>Outlays on all activities concerned with the prevention of illegal activities and apprehension of criminals.</p>
+<p>Includes outlays on:<br />
+Traffic control by police; alien registration; internal security forces; police colleges; police training; and, police laboratories.</p>"""^^rdf:HTML .
+
+:0312
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Fire protection services"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Contributions to volunteer fire brigades; operations of fire brigade boards; and, roadside clearing operations.</p>
+<p>Excludes outlays on:</p>
+Forest fire protection services classified to GPC 1020.</p>"""^^rdf:HTML .
+
+:032
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Law courts and legal services"@en ;
+    skos:narrower :0321 .
+
+:0320
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Law courts and legal services"@en ;
+    skos:definition """<p>Outlays on legal representation and advice on behalf of the government and others.</p>
+<p>Includes outlays on:<br />
+Costs of crown prosecutions; trusteeship services and law reform; registration of legal titles to property; and, registration of births, deaths and marriages.</p>
+<p>Excludes outlays on:<br />
+Industrial law classified to GPC 1339; and, tribunals and appeals boards that can be classified to specific purpose categories.</p>"""^^rdf:HTML .
+
+:033
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Prisons and corrective services"@en ;
+    skos:narrower :0331 .
+
+:0320
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Prisons and other corrective services"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Places of secure detention for convicted persons, alleged offenders and non-institutional corrective services; prisons, prison farms, remand centres and asylums for the criminally insane; places of secure detention for juveniles; child offenders and children on remand for alleged offences; youth training centres; juvenile corrective institutions; and, community-based correction activities, where the offender or alleged offender is at large in the community but is required to adhere to certain rehabilitation sessions, such as parole and probation services, community service orders and attendance centres.</p>
+<p>Excludes outlays on:<br />
+Residential child care institutions that are not places of secure detention, such as juvenile hostels, family group homes, campus homes, etc. classified to GPC 0621.</p>"""^^rdf:HTML .
+
+:039
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other public order and safety"@en ;
+    skos:narrower :0391 .
+
+:0390
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other public order and safety"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Programs relating to the control of animals such as dog registration, pounds, control of stray cattle and associated veterinary costs; beach inspectors; life saving and beach patrols; maintenance of state emergency services, such as through local government contributions, and their operations that cannot be allocated to disaster relief classified to GPC 0629 or GPC 1430; control of explosives; human rights organisations; and, community relations.</p>
+<p>Excludes outlays on:<br />
+Road safety classified to GPC 1219.</p>"""^^rdf:HTML .
+
+
+:04
+    a skos:Concept ;
+    skos:topConceptOf cs: ;
+    skos:prefLabel "Education"@en ;
+    skos:narrower :041 , :042 , :043 , :044 , :049 .
+
+:041
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Primary and secondary education"@en ;
+    skos:narrower :0411 , 0412 , :0419.
+
+:0411
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Primary education"@en ;
+    skos:definition """<p>Outlays on administration, inspection, support, operation, etc. of educational programs that provide a sound knowledge of reading, writing and simple mathematics and an elementary knowledge of other subjects for children from ages 5 to 7 until ages 10 to 12.</p>
+<p>Includes outlays on:<br />
+Special education programs integrated into mainstream primary education.</p>
+<p>Excludes outlays on:<br />
+Transportation services to students classified to GPC 044; and, school medical and dental programs classified to GPC 0550.</p>"""^^rdf:HTML .
+
+:0412
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Secondary education"@en ;
+    skos:definition """<p>Outlays on administration, inspection, support, operation, etc. of educational programs that extend primary programs on a more subject-oriented pattern for a period of 4 to 6 years.Some vocational and technical training may occur particularly in the final years.</p>
+<p>Includes outlays on:<br />
+Out-of-school secondary education courses for adults and young people other than those offered by colleges of technical and further education; and, special education programs integrated into mainstream secondary education.</p>
+<p>Excludes outlays on:<br />
+Transportation services to students classified to GPC 044; and, school medical and dental programs classified to GPC 0550.</p>"""^^rdf:HTML .
+
+:0419
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Primary and secondary education n.e.c."@en ;
+    skos:definition """<p>Outlays on administration, inspection, support, operation, etc. of primary and secondary educational programs that cannot be assigned to any of the preceding subgroups.</p>
+<p>Excludes outlays on:<br />
+Transportation services to students classified to GPC 044; and, school medical and dental programs classified to GPC 0550.</p>"""^^rdf:HTML .
+
+:042
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Tertiary education"@en ;
+    skos:narrower :0421 , :0422 , 0429 .
+
+:0421
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "University education"@en ;
+    skos:definition """<p>Outlays on administration, inspection, support, operation, etc. of educational programs leading to a university first degree, post-graduate degree or other higher qualifications.Entry generally requires matriculation at secondary level or equivalent.</p>
+<p>Excludes outlays on:<br />
+Transportation services to university students classified to GPC 044.</p>"""^^rdf:HTML .
+
+:0422
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Technical and further education"@en ;
+    skos:definition """<p>Outlays on administration, inspection, support, operation, etc. of educational programs in music, fine arts and design; courses designed to meet specific requirements of industry and commerce; and, non-vocational courses offered by colleges of technical and further education. Entry may not require matriculation at secondary level or equivalent.</p>
+<p>Excludes outlays on:<br />
+Transportation services to technical and further education students classified to GPC 044; and, vocational training programs not provided by TAFE institutions classified to GPC 1331.</p>"""^^rdf:HTML .
+
+:0429
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Tertiary education n.e.c."@en ;
+    skos:definition """<p>Outlays on administration, inspection, support, operation, etc. of educational programs provided by tertiary institutions n.e.c. which normally require completion of high school or equivalent as a minimum standard of entry.</p>
+<p>Excludes outlays on:<br />
+Courses which are essentially non-vocational and associated with leisure time activities classified to GPC 0439 or GPC 0422; and, transportation services to students classified to GPC 044.</p>"""^^rdf:HTML .
+
+:043
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Preschool education and education not definable by level"@en ;
+    skos:narrower :0431 .
+
+:0431
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Preschool education"@en ;
+    skos:definition """<p>Outlays on administration, inspection, support, operation, etc.of preschool education programs for children up to 5 years of age delivered in a school-type environment designed to bridge the gap between home and school atmosphere.</p>
+<p>Includes outlays on:<br />
+Preschools and kindergartens; and, any special education programs integrated into mainstream preschool education.</p>
+<p>Excludes outlays on:<br />
+Playcentres, creches, day-care centres, etc.(where the main function is not to prepare children for subsequent schooling but rather to provide services to assist working mothers, one parent families and other families in need) classified to GPC 0621; and, 'preschools' classified to GPC 0621.</p>"""^^rdf:HTML .
+
+:0432
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Special education"@en ;
+    skos:definition """<p>Outlays on administration, inspection, support, operation, etc.of special education programs provided by special schools.</p>
+<p>Includes outlays on:<br />
+Education of blind, deaf and mute children, and children with other forms of physical handicap; slow learners; children with social or emotional problems; children in custody or on remand; and, children in hospital.</p>
+<p>Excludes outlays on:<br />
+Transportation services to students classified to GPC 044; school medical and dental programs classified to GPC 0550; special education programs integrated into mainstream primary education classified to GPC 0411; and, special education programs integrated into mainstream secondary education classified to GPC 0412.</p>"""^^rdf:HTML .
+
+
+:0439
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other education not definable by level"@en ;
+    skos:definition """<p>Outlays on administration, inspection, support, operation, etc. of educational programs which are not definable by level.</p>
+<p>Includes outlays on:<br />
+Adult education courses which are essentially non-vocational and associated with leisure-time activities, other than those offered by colleges of technical and further education; migrant education programs; and, other educational programs not definable by education level.</p>"""^^rdf:HTML .
+
+
+:044
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Transportation of students"@en ;
+    skos:narrower :0441 , :0449 .
+
+:0441
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Transportation of non-urban school students"@en ;
+    skos:definition """<p>Outlays on administration, inspection, support, etc. of transportation services to non-urban (rural) school students.
+
+<p>Includes outlays on:<br />
+Contract bus services; conveyance allowances to parents; and, reimbursement of private sector bus operators for concessional fares offered to non-urban school students.</p>
+<p>Urban areas in each state include the capital city and the commuter population areas for the capital city.Non-urban areas in each state are residual to the urban areas.Data on transport services are sourced from the financial statements of transport authorities which usually specialise in providing either wholly/predominantly urban or wholly/predominantly non-urban services.Depending on the areas serviced by these authorities, some overlap between the urban/non-urban distinction may be unavoidable.</p>"""^^rdf:HTML .
+
+:0449
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Transportation of other students"@en ;
+    skos:definition """<p>Outlays on administration, inspection, support, etc. of transportation services to students other than non-urban school children.</p>
+<p>Includes outlays on:<br />
+Contract bus services; conveyance allowances to parents; and, reimbursement of public trading enterprises and private sector bus operators for concessional fares offered to these students.</p>
+<p>Excludes outlays on:<br />
+Transportation services to non-urban school children classified to GPC 0441.</p>"""^^rdf:HTML .
+
+:049
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Education n.e.c."@en ;
+    skos:narrower :0490 .
+
+:0411
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Education n.e.c."@en ;
+    skos:definition """<p>Outlays on education affairs and services that cannot be assigned to one of the four preceding groups of GPC 04.</p>"""^^rdf:HTML .
+
+
+:05
+    a skos:Concept ;
+    skos:topConceptOf cs: ;
+    skos:prefLabel "Health"@en ;
+    skos:narrower :051 , :052 , :053 , :054 , :055 , :056 , :057 , :059 .
+
+:051
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Acute care institutions"@en ;
+    skos:definition """<p>This subgroup comprises all activities of acute care hospitals, free-standing hospices, alcohol and drug treatment centres, and same-day establishments except activities involving health research and formal health education.</p>
+<p>Acute care hospitals are defined in the National Health Data Dictionary (NHDD) as 'establishments which provide at least minimal medical, surgical or obstetric services for inpatient treatment and/or care, and which provide round-the-clock comprehensive qualified nursing services as well as other necessary professional services. They must be licensed by the State health departments, or controlled by government departments. Most of the patients have acute conditions or temporary ailments and the average stay per admission is relatively short. Hospitals specialising in dental, ophthalmic aids and other specialised medical or surgical care are included in this category'.</p>
+<p>Alcohol and drug treatment centres are free-standing centres for the treatment of drug dependence on an in-patient basis.</p>
+<p>Same day establishments include day centre/hospitals and free-standing day surgery centres.</p>"""^^rdf:HTML ;
+    skos:narrower :0511 , :0512 .
+
+:0511
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Admitted patient services in acute care institutions"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Care in designated psychiatric units in acute care institutions; and, care of Nursing Home Type Patients in acute care institutions (as defined by the Health Insurance Act).</p>"""^^rdf:HTML .
+
+:0512
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Non-admitted patient services in acute care institutions"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Accident and emergency services, outpatient clinics, dental clinics, outreach services, community health services and other services provided by acute care institutions not included in GPC 0511 and GPC 0570.</p>"""^^rdf:HTML .
+
+:052
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Mental health institutions"@en ;
+    skos:narrower :0520 .
+
+:0520
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Mental health institutions"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Psychiatric hospitals and psycho-geriatric nursing homes.</p>
+<p>The NHDD defines psychiatric hospitals as 'establishments devoted primarily to the treatment and care of in-patients with psychiatric, mental or behavioural disorders'.</p>"""^^rdf:HTML .
+
+:053
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Nursing homes for the aged"@en ;
+    skos:narrower :0530 .
+
+:0530
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Nursing homes for the aged"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Nursing homes which provide long-term care involving regular basic nursing care primarily for persons aged 65 years and over.</p>
+<p>Some young disabled persons are cared for by these nursing homes, but the focus of the nursing home is care for older persons. Some of these institutions are located with acute care institutions.</p>
+<p>Excludes outlays on:<br />
+Hostels for the aged classified to GPC 0622; nursing homes for the young disabled classified to GPC 0623; and, psycho-geriatric nursing homes classified to GPC 0520.</p>"""^^rdf:HTML .
+
+:054
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Community health services"@en ;
+    skos:narrower :0541 , :0542 , :0549 .
+
+:0541
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Community mental health services"@en ;
+    skos:definition """<p>Outlays on specialised mental health programs for the mentally ill treated in a community setting.</p>
+<p>Includes outlays on:<br />
+Mobile acute assessment; treatment and case management services; outreach programs; and, community based residential services.</p>
+<p>Excludes outlays on:<br />
+Treatment by psychiatrists in private practice which are classified to GPC 0549; and, psycho-geriatric nursing homes which are classified to GPC 0520.</p>"""^^rdf:HTML .
+
+:0542
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Patient transport"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Emergency transport to hospital; inter-hospital transport; non-emergency transport to and from treatment centres; and, travel and accommodation assistance.</p>"""^^rdf:HTML .
+
+:0549
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other community health services"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Domiciliary nursing services; well baby clinics; dental health services; home nursing services which are not delivered as part of a welfare oriented program; services provided by community health centres; health services provided to particular community groups such as Aborigines; family planning services; alcohol and drug rehabilitation programs not involving admission; and, other health services provided in a community setting.</p>
+<p>Also includes Commonwealth subsidies for services ofprivate medical and private dental practitioners and optometrists through Medicare and other programs.</p>
+<p>Excludes outlays on:<br />
+<p>Community health services provided by acute care institutions classified to GPC 0511; and, community mental health services classified to GPC 0541.</p>"""^^rdf:HTML .
+
+:055
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Public health services"@en ;
+    skos:narrower :0550 .
+
+:0550
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Public health services"@en ;
+    skos:definition """<p>Outlays on public health services consisting ofpopulation health service programs and preventive health service programs.</p>
+<p>Population health service programs are defined as those programs which aim to protect, promote and/or restore the collective health of whole or specific populations (as distinct from activities directed to the care of individuals).</p>
+<p>Includes outlays on:<br />
+<p>Health promotion campaigns; occupational health and safety programs; food standards regulation; environmental health; nutrition services; communicable disease surveillance and control; and, epidemiology.</p>
+<p>Preventive health service programs are those programs which have the aim of preventing disease.</p>
+<p>Includes outlays on:<br />
+<p>Immunisation programs; breast cancer screening; and, screening for childhood diseases.</p>"""^^rdf:HTML .
+
+:056
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Pharmaceuticals, medical aids and appliances"@en ;
+    skos:narrower :0560 .
+
+:0560
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Pharmaceuticals, medical aids and appliances"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Pharmaceuticals provided outside of hospitals, aids and appliances used for health purposes and supplied in an ambulatory setting, glasses, hearing aids, wheel chairs, etc.</p>
+<p>Excludes outlays on:<br />
+Prostheses used in operations.</p>"""^^rdf:HTML .
+
+:057
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Health research"@en ;
+    skos:narrower :0570 .
+
+:0570
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Health Research"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Research into health, medical and health sciences; and, medical instrumentation.</p>"""^^rdf:HTML .
+
+:059
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Health administration n.e.c."@en ;
+    skos:narrower :0590 .
+
+:0590
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Health administration n.e.c."@en ;
+    skos:definition """<p>Outlays on administration, support, operation, etc. of health affairs and services that cannot be assigned to one of the preceding subgroups.</p>
+<p>Includes outlays on:<br />
+Health insurance schemes designed to cover all or part of the costs of health care; the administration of Medicare by the Health Insurance Commission; and, any subsidies for private health insurance.</p>"""^^rdf:HTML .
+
+
+:06
+    a skos:Concept ;
+    skos:topConceptOf cs: ;
+    skos:prefLabel "Social security and welfare"@en ;
+    skos:narrower :061 , :062 , :069 .
+
+:061
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Social security"@en ;
+    skos:definition "Social security services are defined as chiefly transfer payments (including payments in kind) to compensate for reduction or loss of income or inadequate earning capacity."@en ;
+    skos:narrower :0610 .
+
+:0610
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Social security"@en ;
+    skos:definition """<p>Outlays on administration, provision, support, operation, etc. of social security affairs, including administration costs that can be separated from the provision of welfare services. Social security includes sickness benefits;benefits to ex-service personnel and their dependents; permanent disability benefits; old age benefits; widow's, deserted wives, divorcees, and orphans benefits; unemployment benefits; sole parents benefits; and, other social security.</p>"""^^rdf:HTML ;
+    skos:narrower :06101 , :06102 , :06103 , :06104 , :06105 , :06106 , :06107 , :06108 .
+
+:06101
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Sickness benefits"@en ;
+    skos:definition """<p>Pensions and other benefits paid to persons who are sick and thereby suffer loss of income due to work incapacity.</p>
+<p>Includes outlays on:<br />
+Sickness Benefits and miners phthisis compensation.</p>
+<p>Excludes outlays on:<br />
+Special Benefits; workers compensation payments classified to purpose; and, payments for health services classified to the appropriate subgroup of major group GPC 05.</p>"""^^rdf:HTML .
+
+:06102
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Benefits to ex-service personnel and their dependants"@en ;
+    skos:definition """<p>Pensions and other benefits paid to ex-service personnel to compensate for invalidity and other permanent disablement resulting from service in the defence forces, and to war widows and war orphans.</p>
+<p>Includes outlays on:<br />
+Ex-service personnel disability pensions and allowances; and, service pensions.</p>
+<p>Excludes outlays on:<br />
+Pensions from Defence Forces Retirement and Death Benefits scheme classified to GPC 0110; old age pensions, disability benefits, etc.paid through the general social security system to ex-service personnel; and, medical services classified to the appropriate subgroup of major group GPC 05.</p>"""^^rdf:HTML .
+
+:06103
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Permanent disability benefits"@en ;
+    skos:definition """<p>Disability service pensions and other benefits paid to compensate for the permanent loss of income due to full or partial disablement.</p>
+<p>Includes outlays on:<br />
+Payments to chronically ill and disabled persons.</p>
+<p>Excludes outlays on:<br />
+Repatriation and other disablement benefits payable only to ex-service personnel; and, medical services classified to the appropriate subgroup of major group GPC 05.</p>"""^^rdf:HTML .
+
+:06104
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Old age benefits"@en ;
+    skos:definition """<p>Payments of old age pensions.</p>
+<p>Excludes outlays on:<br />
+Pensions payable only to ex-service personnel and their dependants; and, medical services classified to the appropriate subgroup of major group GPC 05.</p>
+<p>Widows, deserted wives, divorcees and orphans benefits</p>
+Pensions and other benefits paid to widows, deserted wives and divorcees that are not made on the grounds of the need to support a dependent child.Pensions and other benefits paid where both parents of a child are deceased or if the whereabouts of a sole surviving parent is unknown.</p>
+<p>Excludes outlays on:<br />
+War widows and war orphans pensions.</p>"""^^rdf:HTML .
+
+:06105
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Unemployment benefits"@en ;
+    skos:definition """<p>Unemployment benefits paid to compensate for loss of income due to unemployment.</p>
+<p>Excludes outlays on:<br />
+Government labour exchanges classified to GPC 1339; unemployment relief grants through schemes such as NEAT, CYSS and YESS classified to the purpose which the industry serves or GPC 1339; pensions and other benefits paid to persons who are sick and thereby suffer loss of income due to work incapacity; Special Benefits; and, welfare assistance to the unemployed classified to GPC 0629.</p>"""^^rdf:HTML .
+
+:06106
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Family and child benefits"@en ;
+    skos:definition """<p>Income assistance paid to families irrespective of whether anyone in the household is earning an income.</p>
+<p>Includes payments to:<br />
+Households on a per child basis such as family allowances; and, payments to children with a disability not made to institutions, such as child disability allowances.</p>
+<p>Excludes payments to:<br />
+Dependants of ex-service personnel classified; widows, deserted wives, divorcees and orphans classified; single parent households with dependent children; and, institutions for children with a disability classified to GPC 0623.</p>"""^^rdf:HTML .
+
+:06107
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Sole parents benefits"@en ;
+    skos:definition "Income assistance payments to single parent households with dependent children."@en .
+
+:06108
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other social security"@en ;
+    skos:definition """<p>Outlays on administration, provision, support, operation, etc. of other social security affairs, including administration.</p>
+<p>Includes:<br />
+Special Benefits; funeral benefits and compassionate allowances; assistance to individuals or households with inadequate earning capacity, in the nature of concessions, such as telephone rental, postal, transport and rate concessions; and, other income assistance.</p>
+<p>Also includes outlays by:<br />
+Departments, bureaux or program units which serve the social security system including those that disseminate information, prepare budgets and conduct or support research into social security affairs.</p>
+<p>Excludes outlays on:<br />
+Student transport concessions which are considered to be education outlays and are classified to GPC 044.</p>"""@en .
+
+:061
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Welfare services"@en ;
+    skos:definition "Welfare services are defined as assistance delivered to clients, or groups of clients with special needs such as the young, the aged or the disabled."@en ;
+    skos:narrower :0621 , :0622 , :0623 , :0629 .
+
+:0621
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Family and child welfare services"@en ;
+    skos:definition """<p>Child care services and services for children which are developmental in nature.</p>
+<p>Includes outlays on:<br />
+Long-day care centres, family-day care, occasional care/other centres and outside school hours care; and, subsidies for child-care assistance and child-care cash rebate.</p>"""^^rdf:HTML ;
+    skos:narrower :06210 .
+
+:0621
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Child, youth and family welfare services"@en ;
+    skos:definition """<p>Child, youth and family welfare services which are protective (children), developmental (youth), and supportive (families) in nature.</p>
+<p>Includes outlays on:<br />
+<p>Substitute care (short term and permanent); information, advice and referral, particularly in adoption; development and monitoring of family/household management skills; Supported Accommodation Assistance Program for youth (SAAP); protective investigation, protective supervision, statutory guardianship management, protective accommodation; services delivered by residential institutions, such as centres, villages, shelters, hostels, orphanages, youth refuges, juvenile hostels, campus homes and family group homes; marriage and child/juvenile counselling; and, assessment and evaluation of offenders by non-judicial bodies.</p>"""^^rdf:HTML .
+
+:0622
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Welfare services for the aged"@en ;
+    skos:definition """<p>Welfare services for the aged are programs providing services primarily intended for persons aged 65 and over.</p>
+<p>Includes outlays on:<br />
+Respite care; domestic and personal assistance, e.g. services provided through the Home and Community Care Program; services delivered by residential institutions, e.g. hostels, villages, group homes; financial assistance not primarily related to inadequate earning capacity, e.g. concessions for aged persons (transport and material assistance, etc.); and, community centres, e.g. senior citizens centres.</p>
+<p>Excludes outlays on:<br />
+Nursing homes for the aged which are classified to GPC 0530.</p>"""^^rdf:HTML .
+
+:0623
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Welfare services for people with a disability"@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Respite care; development care; substitute care; domestic and personal assistance, e.g. services provided through the Home and Community Care Program; services delivered by residential institutions, e.g. hostels, group homes and other services provided under the Commonwealth/State disability agreement; transport other than public transport; supported employment and rehabilitation, e.g. sheltered employment, training centres for people with a disability; community centres, e.g. day care centres for people with a disability; nursing homes for people with a disability; and, financial assistance not primarily related to inadequate earning capacity, e.g. concessions specifically for people with a disability (transport and material assistance, etc.).</p>"""^^rdf:HTML .
+
+:0629
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Welfare services n.e.c."@en ;
+    skos:definition """<p>Includes outlays on:<br />
+Homeless persons' assistance, e.g. Supported Accommodation Assistance Program (SAAP) for people other than youth; information, advice and referral services; prisoners' aid; care of refugees; premarital education; aboriginal welfare services; women's shelters; general casework services which lead to the determination of eligibility for income assistance or welfare services; multi-client services (food and clothing) in times of personal and family emergencies and relief of victims of man-made disasters; departments, bureaux or program units which serve the welfare services system including those that disseminate information, prepare budgets, policy and research; financial assistance (other than for the aged and the disabled) not primarily related to inadequate earning capacity; and, community and management support.</p>"""^^rdf:HTML .
+
+:069
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Social security and welfare n.e.c."@en ;
+    skos:narrower :0690 .
+
+:0690
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Social security and welfare n.e.c."@en ;
+    skos:definition """<p>Outlays on administration, inspection, support, operation, etc.of both social security and welfare affairs and services that cannot be assigned to one of the two preceding groups of major group 06, including administration costs that cannot be classified to either social security or welfare affairs.</p>
+<p>Includes:<br />
+Outlays by departments, bureaux or program units which serve the social security and welfare system including those that disseminate information, prepare budgets and conduct or support research into social security and welfare affairs and services; and, financial compensation to individuals or their families, who as victims of criminal activities suffered injury, illness or death.</p>"""^^rdf:HTML .
+
+
+:07
+    a skos:Concept ;
+    skos:topConceptOf cs: ;
+    skos:prefLabel "Housing and community amenities"@en ;
+    skos:narrower :071 , :072 , :073, :079 .
+
+:071
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Housing and community development"@en ;
+    skos:narrower :0711 , :0712 , :0719 .
+
+:0711
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Housing"@en ;
+    skos:definition """<p>Outlays on administration, provision, support, operation, etc. of housing affairs and services.</p>
+<p>Includes outlays on:<br />
+Provision of housing for the general public and people with special needs; acquisition of land for dwelling construction; slum clearance; administration of rent controls and eligibility standards for public housing; conditional financial assistance for the construction of homes; rental subsidies and allowances; mortgage financing of homes for ex-service personnel and other low cost mortgage financing for home building or purchase; producing and disseminating information about housing; and, applied research into and experimental development of housing standards and design.</p>
+<p>Excludes outlays on:<br />
+Residential institutions mainly providing living quarters classified to the appropriate sub-group of GPC 062; provision of accommodation to serving members of the defence forces classified to GPC 0200; and, construction methods, materials or standards classified to GPC 1130.</p>"""^^rdf:HTML .
+
+:0712
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Aboriginal community development"@en ;
+    skos:definition """<p>Outlays on administration, provision, support, operation, etc. of aboriginal community development.</p>
+<p>Aboriginal communities are those which have a predominantly indigenous population and where tribal ways and traditional roles are maintained. They are usually remote from major service centres and include communities on Aboriginal land and within pastoral leases, reserves, town camps and transit camps.</p>"""^^rdf:HTML .
+
+:0719
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other community development"@en ;
+    skos:definition """<p>Outlays on administration, provision, support, operation, etc. of overall community development mainly concerned with the planning of new or rehabilitated communities with the aim of improving the quality of life.</p>
+<p>Includes outlays on:<br />
+Plans involving housing and industries; facilities for the health, education, culture and recreation of the community; schemes for financing construction; relocating existing populations; administrating zoning laws; regulations on land use; building standards other than standards covering housing; administrating concessions to decentralised industries; research into community development; and, dissemination of information.</p>
+<p>Excludes outlays on:<br />
+Aboriginal community development which is classified to GPC 0712; and, plan implementation, that is, actual construction of housing, industrial buildings, streets, public utilities and cultural facilities classified to the appropriate major group according to functional role.</p>"""^^rdf:HTML .
+
+:072
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Water supply"@en ;
+    skos:narrower :0721 , :0729 .
+
+:0721
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Aboriginal community water supply"@en ;
+    skos:definition """<p>Outlays on administration, regulation, research, support, etc. of aboriginal community water supply.</p>
+<p>Aboriginal communities are those which have a predominantly indigenous population and where tribal ways and traditional roles are maintained. They are usually remote from major service centres and include communities on Aboriginal land and within pastoral leases, reserves, town camps and transit camps.</p>"""^^rdf:HTML .
+
+:0729
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other water supply"@en ;
+    skos:definition """<p>Outlays on administration, regulation, research, support, etc. of water supply services other than for aboriginal communities.</p>
+<p>Includes outlays on:<br />
+Assistance for the development, expansion or operation of water supply systems; and, production and dissemination of information and research into the conservation, collection, purification and distribution of water.</p>
+<p>Excludes outlays on:<br />
+Government activities in connection with irrigation systems classified to GPC 1010; and, Aboriginal water supply classified to GPC 0721.</p>"""^^rdf:HTML .
+
+:073
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Sanitation and protection of the environment"@en ;
+    skos:narrower :0731 , :0739 .
+
+:0731
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Aboriginal community sanitation services"@en ;
+    skos:definition """<p>Covers outlays on administration, regulation, support, etc. of aboriginal community sanitation services.</p>
+<p>Aboriginal communities are those which have a predominantly indigenous population and where tribal ways and traditional roles are maintained. They are usually remote from major service centres and include communities on Aboriginal land and within pastoral leases, reserves,town camps and transit camps.</p>"""^^rdf:HTML .
+
+:0739
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other sanitation and protection of the environment"@en ;
+    skos:definition """<p>Covers outlays on administration, regulation, support, etc. of household garbage collection and disposal services, other sanitary services, sewerage collection, sewerage treatment and disposal operations, urban stormwater drainage services, pollution abatement and control, and other environmental protection programs.</p>
+<p>Includes outlays on:<br />
+Development, expansion or operation of household garbage systems and other systems; trade and industrial waste disposal; cleaning of streets, gutters, foreshores and recreation areas; special rubbish clean-ups and anti-litter enforcement; disposal of radioactive wastes; deep mains town systems; effluent drainage systems; septic tank cleaning and inspection; nightsoil disposal ('sanitary service'); urban drainage systems and stormwater drains, including the linking or lining of creeks and the provision of open or deep draining systems; development and monitoring of standards covering pollution and air quality such as outlays on construction, development and operation of monitoring stations (e.g. stations to monitor noise levels near airports), and support of the development and use of anti-pollution devices; environmental protection programs such as the control and prevention of erosion of beaches and foreshores; flood mitigation in urban areas; research and experimental development into problems of pollution abatement and control and other environmental protection programs; and, production and dissemination of information.</p>
+<p>Excludes outlays on:<br />
+Aboriginal community sanitation services classified to GPC 0731; construction of drains associated with roadworks classified to GPC 1214; rural flood mitigation and agricultural drainage classified to GPC 1010; and, pollution abatement and control and other environmental protection programs classified to the purpose which the industry serves.</p>"""^^rdf:HTML .
+
+:079
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other community amenities"@en ;
+    skos:narrower :0791 , :0799 .
+
+:0791
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Aboriginal community amenities"@en ;
+    skos:definition """<p>Covers outlays on administration, provision, operation, etc. of aboriginal community amenities.</p>
+<p>Aboriginal communities are those which have a predominantly indigenous population and where tribal ways and traditional roles are maintained. They are usually remote from major service centres and include communities on Aboriginal land and within pastoral leases, reserves, town camps and transit camps.</p>"""^^rdf:HTML .
+
+:0799
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other community amenities"@en ;
+    skos:definition """<p>Covers outlays on administration, provision, operation, etc. of street lighting and other community amenities that cannot be assigned to one of the preceding subgroups of major group GPC 07.</p>
+<p>Includes outlays on:<br />
+Design, installation, operation, maintenance, upgrading and other aspects of street lighting, such as developing and monitoring street lighting standards; public conveniences; pedestrian shopping malls; drinking fountains; bus shelters; and, cemeteries and crematoria.</p>
+<p>Excludes outlays on:<br />
+Aboriginal community amenities classified to GPC 0791; and, public conveniences at recreational areas classified to GPC 0819.</p>"""^^rdf:HTML .
+
+
+:08
+    a skos:Concept ;
+    skos:topConceptOf cs: ;
+    skos:prefLabel "Recreation and culture"@en ;
+    skos:narrower :081 , :082 , :083, :089 .
+
+:081
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Recreational facilities and services"@en ;
+    skos:narrower :0811 , :0819 .
+
+:0811
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "National parks and wildlife"@en ;
+    skos:definition """<p>Covers outlays on administration, regulation, support, provision, operation, etc. of national parks and wildlife services.</p>
+<p>Includes outlays on:<br />
+Aspects of the national estate such as historic houses and sites which are part of national parks and wildlife services.</p>"""^^rdf:HTML .
+
+:0811
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Recreational facilities and services n.e.c."@en ;
+    skos:definition """<p>Covers outlays on administration, regulation, support, provision, operation, etc. of public halls and civic centres, swimming pools (both indoor and outdoor) and other recreational swimming areas, and other recreational facilities and services.</p>
+<p>Includes outlays on:<br />
+<p>Multipurpose halls used for recreation and cultural pursuits; dressing sheds and diving platforms; football and cricket grounds; tennis courts; golf-links; indoor sporting complexes; recreational parks and gardens; playgrounds; barbecue areas; walking and cycling paths; sport fishing and hunting; racing and gaming commissions; lotteries commissions; national, regional or local team representation in sporting events; equipment, coaching, training and other items needed to field a team or player; and, professional teams or individual competitors.</p>
+<p>Excludes outlays on:<br />
+National parks and wildlife services classified to GPC 0811; life saving, beach patrols and beach inspection classified toGPC 0390 and, predominantly cultural facilities such as zoological and botanical gardens, and aquariums classified to GPC 0820.</p>"""^^rdf:HTML .
+
+
+:082
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Cultural facilities and services"@en ;
+    skos:narrower :0820 .
+
+:0820
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Cultural facilities and services"@en ;
+    skos:definition """<p>Outlays on administration, support, provision, operation, etc. of libraries open to the public, facilities and services for the creative and performing arts, museums which store and exhibit objects illustrating antiquities, natural history, etc., art galleries, and other cultural facilities and services.</p>
+<p>Includes outlays on:<br />
+<p>Lending and reference libraries and book mobiles; provision of books; library archives; support of library research; theatres, concerts, stage productions and orchestras; support to individual artists, writers, designers, composers and others working in the arts; state museums and war museums; exhibition halls; monuments; historic houses and sites; zoological and botanical gardens; aquariums and arboreta; national, regional and local celebrations; and, organisations engaged in promoting cultural activities.</p>
+<p>Excludes outlays on:<br />
+<p>Cultural activities intended for distribution overseas classified to GPC 0190; production of cultural material intended for overseas broadcasting classified to GPC 0830; and, aspects of the national estate, which are part of national parks and wildlife services, classified to GPC 0811.</p>"""^^rdf:HTML .
+
+:083
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Broadcasting and film production"@en ;
+    skos:narrower :0830 .
+
+:0820
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Broadcasting and film production"@en ;
+    skos:definition """<p>Outlays on administration, regulation, support, provision, operation, etc. of broadcasting services and film production.</p>
+<p>Includes outlays on:<br />
+<p>Support for the construction or acquisition of facilities for television or radio broadcasting and for the production and presentation of broadcasting material; production of cultural material intended for overseas broadcasting; administering the collection of commercial radio and television licence fees; and, support of film production.</p>
+<p>Excludes outlays on:<br />
+Support of cultural activities intended for distribution overseas classified to GPC 0190.</p>"""^^rdf:HTML .
+
+:089
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Recreation and culture n.e.c."@en ;
+    skos:narrower :0890 .
+
+:0890
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Recreation and culture n.e.c."@en ;
+    skos:definition "Outlays on administration, support, provision, operation, etc. of recreational and cultural affairs and services that cannot be assigned to one of the preceding subgroups of major group GPC 08." .
+
+
+:09
+    a skos:Concept ;
+    skos:topConceptOf cs: ;
+    skos:prefLabel "Fuel and energy"@en ;
+    skos:narrower :091 , :092 , :099 .
+
+:091
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Fuel affairs and services"@en ;
+    skos:narrower :0911 , :0919 .
+
+:0911
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Gas"@en ;
+    skos:definition """<p>Outlays on administration, regulation, planning, support, operation, etc. of gas affairs and services which concern natural gas, liquified petroleum gases and refinery gases.
+<p>Includes outlays on:<br />
+Price control; research; dissemination of information; measures designed to reduce consumption or increase production; and, support in the form of advances, grants or subsidies.</p>
+<p>Excludes outlays on:<br />
+Transportation of gas classified to the appropriate subgroup of GPC 12.</p>"""^^rdf:HTML .
+
+
+:0919
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Fuel affairs and services n.e.c."@en ;
+    skos:definition """<p>Outlays on administration, regulation, planning, support, operation, etc. of fuel affairs and services other than gas. Other fuel affairs and services include coal, petroleum, nuclear affairs and alternative fuels such as alcohol, wood and wood wastes.</p>
+<p>Includes outlays on:<br />
+Price control; research; dissemination of information; measures designed to reduce consumption or increase production; and, support in the form of advances, grants or subsidies.</p>
+<p>Excludes outlays on:<br />
+Transportation of fuel other than gas classified to the appropriate subgroup of GPC 12.</p>"""^^rdf:HTML ;
+    skos:narrower :09191 , :09192 , :09193 .
+
+:09191
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Coal"@en ;
+    skos:definition "Outlays on administration, regulation, planning, support, operation, etc. of solid mineral fuel affairs and services which concern coal of all grades, lignite and peat irrespective of the method used in their extraction, as well as conversion of these fuels to other forms such as coke or gas." .
+
+:09192
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Petroleum"@en ;
+    skos:definition "Outlays on administration, regulation, planning, support, operation, etc. of petroleum affairs and services which concern oil from wells or other sources such as shale." .
+
+:09193
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Nuclear affairs"@en ;
+    skos:definition """<p>Outlays on administration, regulation, planning, support, operation, etc. of nuclear affairs and services which cover extraction as well as processing of fissionable and fertile materials and manufacture of fuel elements.</p>
+<p>Excludes outlays on:<br />
+Radioactive wastes classified to GPC 0739.</p>"""^^rdf:HTML .
+
+:092
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Electricity and other energy"@en ;
+    skos:narrower :0921 , :0922 , :0929 .
+
+:0921
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Aboriginal community electricity services"@en ;
+    skos:definition """<p>Outlays on administration, provision, support, operation, etc. of aboriginal community electricity services.</p>
+<p>Aboriginal communities are those which have a predominantly indigenous population and where tribal ways and traditional roles are maintained. They are usually remote from major service centres and include communities on Aboriginal land and within pastoral leases, reserves, town camps and transit camps.</p>"""^^rdf:HTML .
+
+:0922
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other electricity"@en ;
+    skos:definition """<p>Outlays on administration, regulation, planning, support, operation, etc. of electricity affairs and services which concern conventional sources of electricity such as thermal, nuclear or hydro supplies, and nonconventional sources such as electricity from wind or solar heat.</p>
+<p>Includes outlays on:<br />
+Price control; research, dissemination of information; measures designed to reduce consumption or increase production; support in the form of advances, grants or subsidies; and, support for the construction of dams and other works mainly designed to provide electricity.</p>
+<p>Excludes outlays on:<br />
+Electricity services to aboriginal communities which are classified to GPC 0921.</p>"""^^rdf:HTML .
+
+:0929
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other energy"@en ;
+    skos:definition """<p>Outlays on administration, regulation, planning, support, operation, etc. of energy affairs and services other than electricity.This mainly concerns the production of heat in the form of steam, hot water or hot air such as solar heat not used for the generation of electricity.</p>
+<p>Includes outlays on:<br />
+Price control; research; dissemination of information; measures designed to reduce consumption or increase production; and, support in the form of advances, grants or subsidies.</p>"""^^rdf:HTML .
+
+:099
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Fuel and energy n.e.c."@en ;
+    skos:narrower :0990 .
+
+:0990
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Fuel and energy n.e.c."@en ;
+    skos:definition """<p>Outlays on administration, regulation, planning, support, operation, etc. of fuel and energy affairs and services that cannot be assigned to one of the two preceding groups of GPC 09.</p>
+<p>Includes outlays on:<br />
+Measures designed to reduce consumption or increase production of both fuel and energy, for example, the National Energy Conservation Program.</p>"""^^rdf:HTML .
+
+
+:10
+    a skos:Concept ;
+    skos:topConceptOf cs: ;
+    skos:prefLabel "Agriculture, forestry, fishing and hunting"@en ;
+    skos:narrower :101 , :102 .
+
+:101
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Agriculture"@en ;
+    skos:narrower :1010 .
+
+:1010
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Agriculture"@en ;
+    skos:definition "Outlays on administration, regulation, support, operation, etc. of agricultural affairs. Agriculture includes agricultural land management; agricultural water resources management; agricultural support schemes; agricultural research and extension services; and, other agricultural affairs." ;
+    skos:narrower :10101 , :10102 , :10103 , :10104 , :10105 .
+
+:10101
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Agricultural land management"@en ;
+    skos:definition """<p>Outlays on administration, regulation, planning, support, management, etc. of agricultural land in general.</p>
+<p>Includes outlays on:<br />
+Grants, subsidies and other assistance for agricultural land clearing, reclamation and control of soil erosion; land settlement schemes such as grants, interest subsidies and other assistance for farm acquisition; programs of rural debt reconstruction, farm rehabilitation and retraining displaced farmers; and, provision of veterinary and pest control services.</p>
+<p>Excludes outlays on:<br />
+Agricultural water resources; support for research and development into problems of land conservation, reclamation, expansion etc. and, price and income support schemes.</p>"""^^rdf:HTML .
+
+:10102
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Agricultural water resources management"@en ;
+    skos:definition """<p>Outlays on administration, regulation, planning, support, management, etc. of agriculture water resources.</p>
+<p>Includes outlays on:<br />
+Provision of land irrigation, rural drainage and flood mitigation systems; and, subsidies, grants and advances for such work.</p>"""^^rdf:HTML .
+
+:10103
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Agricultural support schemes"@en ;
+    skos:definition """<p>Outlays on administration, regulation, support, etc. of agricultural affairs designed to stabilise or improve farm prices and farmers' incomes.</p>
+<p>Includes outlays on:<br />
+Price support and marketing schemes for unprocessed agricultural products; schemes to encourage or restrict output of particular products; and, subsidies to induce farmers to purchase and employ fertilisers, improved seeds and so forth.</p>"""^^rdf:HTML .
+
+:10104
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Agricultural research and extension services"@en ;
+    skos:definition """<p>Agricultural extension services mainly involve the dissemination of knowledge with the principal aim of increasing productivity, improving quality of products, conserving land and reducing labour or other costs.</p>
+<p>Outlays on administration, regulation, support, operation, etc. of agricultural research and extension services.</p>
+<p>Includes research into:<br />
+Land conservation, reclamation and expansion; problems of land reform and settlement; fertiliser use and other means of improving output; veterinary medicine and animal husbandry; and, eradication or control of pests, vermin, plant diseases and other destructive agents.</p>"""^^rdf:HTML .
+
+:10105
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other agricultural affairs"@en ;
+    skos:definition "Outlays on administration, regulation, support, operation, etc. of agricultural affairs not included above in GPC 1010." .
+
+:102
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Forestry, fishing and hunting"@en ;
+    skos:narrower :1020 .
+
+:1020
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Forestry, fishing and hunting"@en ;
+    skos:definition "Outlays on administration, regulation, preservation, exploitation and management, etc. of forestry, fishing and hunting." ;
+    skos:narrower :10201 , :10202 , :10203 .
+
+:10101
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Forestry"@en ;
+    skos:definition """<p>Outlays on administration, regulation, preservation, exploitation and management, etc. of timber resources.</p>
+<p>Includes outlays on:<br />
+Efforts to conserve, extend or rationalise exploitation of forest resources; field management, operation or support of re-afforestation work; pest and disease control activities; forest fire fighting and fire prevention services; research into all aspects of forest management and exploitation; commercial forest operations; extension services; and, dissemination of information.</p>"""^^rdf:HTML .
+
+:10102
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Fishing"@en ;
+    skos:definition """<p>Outlays on administration, regulation, preservation, exploitation and management, etc. of commercial fishing.Fishing covers freshwater, ocean and coastal fishing and fish farming.
+<p>Includes outlays on:<br />
+Fish hatcheries, stocking or culling activities; licensing of fishing; research into fish management and related problems of this industry; extension services; and, dissemination of information.</p>
+<p>Excludes outlays on:<br />
+Sport fishing classified to GPC 0819.</p>"""^^rdf:HTML .
+
+:10103
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Hunting"@en ;
+    skos:definition """<p>Outlays on administration, regulation, preservation, exploitation and management, etc. of hunting.Hunting covers the taking of wildlife and animal propagation, protection and preservation.</p>
+<p>Includes outlays on:<br />
+Game preserves; licensing of hunting; research into wild animal management and related problems of this industry; extension services; and, dissemination of information.</p>
+<p>Excludes outlays on:<br />
+Sport hunting classified to GPC 0819.</p>"""^^rdf:HTML .
+
+
+:11
+    a skos:Concept ;
+    skos:topConceptOf cs: ;
+    skos:prefLabel "Mining and mineral resources other than fuels; manufacturing; and construction"@en ;
+    skos:narrower :111 , :112 , :113 .
+
+:111
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Mining and mineral resources, other than fuels"@en ;
+    skos:narrower :1110 .
+
+:1110
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Mining and mineral resources, other than fuels"@en ;
+    skos:definition """<p>Outlays on administration, regulation, inspection, research, support, operation, etc. of activities relating to prospecting, mining and mineral resources development. In addition to metal bearing minerals, these activities cover sand, clay and stone, chemical and fertiliser minerals, salt, gemstones, asbestos and gypsum.</p>
+<p>Includes outlays on:<br />
+Advances and bounties to foster mineral developments and production.</p>
+<p>Excludes outlays on:<br />
+All activities relating to mineral fuels classified to major group GPC 09.</p>"""^^rdf:HTML .
+
+:112
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Manufacturing"@en ;
+    skos:narrower :1110 .
+
+:1120
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Manufacturing"@en ;
+    skos:definition """<p>Outlays on administration, planning, support, regulation, inspection, promotion, operation, etc.of manufacturing activities and research into manufacturing methods, materials and industrial management.</p>
+<p>Includes outlays on:<br />
+<p>Marketing schemes, etc. for processed primary products such as meat, timber, dried fruits and packaged fish; factory inspection; protection of consumers against dangerous products; the book bounty; payments supporting industrial research and development and export marketing; and, maintaining liaison with manufacturers' associations and other organisations interested in manufacturing affairs and services.</p>
+<p>Excludes outlays on:<br />
+Manufacturing relating to the production of fuel and energy, for example, petroleum and gas refineries, coal processing or nuclear fuel industries classified to major group GPC 09.</p>"""^^rdf:HTML .
+
+:113
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Construction"@en ;
+    skos:narrower :1110 .
+
+:1120
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Construction"@en ;
+    skos:definition """<p>Outlays on administration, planning, support, regulation, inspection, research, promotion, etc. of the building and construction industry.</p>
+<p>Includes outlays on:<br />
+Inspections enforcing building standards; and, research into construction methods, materials and productivity affecting construction.</p>
+<p>Excludes outlays on;<br />
+Specific building and construction projects such as dwellings, factories, roads, mines, farm buildings and so forth classified to the appropriate purpose category.</p>"""^^rdf:HTML .
+
+
+:12
+    a skos:Concept ;
+    skos:topConceptOf cs: ;
+    skos:prefLabel "Transport and communications"@en ;
+    skos:narrower :121 , :122 , :123 , :124 , :125 , :128 , :129 .
+
+:121
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Road transport"@en ;
+    skos:definition """<p>Outlays on administration, regulation, support, operation, etc. of road and highway construction affairs, road and highway maintenance affairs, both off and on street parking, and other road transport affairs and services.</p>
+<p>Includes outlays on:<br />
+Departments, bureaux or program units planning, designing, constructing, extending and improving roads and highways and associated structures such as bridges, tunnels, traffic lights and bus terminals; supervising, licensing or regulating such work; research into road design, construction methods or materials relating to specific projects; dissemination of information on road construction affairs; departments, bureaux or program units that maintain roads and highways and associated structures such as bridges, tunnels, traffic lights and bus terminals, and supervising, licensing or regulating such work; research on specific maintenance related projects; parking attendants and inspectors; construction and operation of parking facilities; research into the design and efficiency of parking facilities; all road plant purchases; road safety; vehicle registration and driver licensing; vehicle safety inspection; size and load specifications; tariffs and passenger fares; granting of franchises and frequency of operations; subsidies, grants or advances to public trading enterprises and private sector system operators; and, general administration, planning, research, dissemination of information not directly related to construction, maintenance and parking.</p>
+<p>Excludes outlays on:<br />
+Reimbursement of public trading enterprises and private sector bus operators for concessional fares offered to students classified to GPC 044; traffic control involving direct action by police classified to GPC 0311; street cleaning classified to GPC 0739; street lighting classified to GPC 0799; regulation and monitoring of pollution arising from motor vehicle operation classified to GPC 0739; grants, advances, subsidies, etc. to motor vehicle manufacturers classified to GPC 1120; and, integrated urban transit systems where separate road transport data are not available classified to GPC 1281.</p>"""^^rdf:HTML ;
+    skos:narrower :1211 , :1212 , :1213 , :1214 , :1219 .
+
+:1211
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Aboriginal community road transport services"@en ;
+    skos:definition """<p>Outlays on administration, regulation, support, operation, etc. of road transport affairs and services in aboriginal communities.</p>
+<p>Aboriginal communities are those which have a predominantly indigenous population and where tribal ways and traditional roles are maintained. They are usually remote from major service centres and include communities on Aboriginal land and within pastoral leases, reserves, town camps and transit camps.</p>"""^^rdf:HTML .
+
+:1212
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Road maintenance"@en ;
+    skos:definition """<p>Outlays on servicing and operating the road system, road pavement and shoulder maintenance, and bridge maintenance and rehabilitation.</p>
+<p>Relates to National Roads Transport Commission (NRTC) expenditure reporting categories A, B and C.</p>"""^^rdf:HTML .
+
+
+:1213
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Road rehabilitation"@en ;
+    skos:definition """<p>Outlays on reinstating failed road pavements to existing standards to improve the ride quality without improving the design standard.</p>
+<p>Relates to NRTC expenditure reporting category D.</p>"""^^rdf:HTML .
+
+:1214
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Road construction"@en ;
+    skos:definition """<p>Outlays on improving the design standard of existing roadways and bridges, building new roadways and bridges, land acquisition, earthworks, and other extensions and improvements to road systems.</p>
+<p>Relates to NRTC expenditure reporting category F.</p>"""^^rdf:HTML .
+
+:1219
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Road transport n.e.c."@en ;
+    skos:definition """<p>Outlays on safety and traffic improvements, and miscellaneous road transport activities.</p>
+<p>Relates to NRTC expenditure reporting categories E and G.</p>"""^^rdf:HTML .
+
+:122
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Water transport"@en ;
+    skos:definition """<p>Outlays on administration, planning, construction, regulation, operation, etc. of water transport facilities and inland, coastal and ocean passenger and freight water transport affairs and services.</p>
+<p>Includes outlays on:<br />
+Harbour facilities and navigation aids, canals, channels, dockyards, breakwaters, piers, wharves and terminals and advances, grants and subsidies for such work; and, research into the design, construction, etc. of water transport facilities.</p>
+<p>Also includes outlays on:<br />
+Registration, licensing and inspection of vessels and crews, safety of passengers or goods, granting of franchises, tariffs and passenger fares, operation of navigational aids, pilots and tugs; subsidies, grants or advances to public trading enterprises and private sector systems operations; and, research and dissemination of information on water transport affairs and services.</p>
+<p>Excludes outlays on:</p>
+Control of water traffic involving direct action by police classified to GPC 03; customs authorities classified to GPC 0190; grants, advances, subsidies, etc. to shipbuilders classified to GPC 1120; and, integrated urban transit systems where separate water transport data are not available classified to GPC 1281.</p>
+<p>Urban areas in each state include the capital city and the commuter population areas for the capital city. Non-urban areas in each state are residual to the urban areas. Data on transport services are sourced from the financial statements of transport authorities which usually specialise in providing either wholly/predominantly urban or wholly/predominantly non-urban services. Depending on the areas serviced by these authorities, some overlap between the urban/non-urban distinction may be unavoidable.</p>"""^^rdf:HTML ;
+    skos:narrower :1221 , :1222 , :1223 .
+
+:1221
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Aboriginal community water transport services"@en ;
+    skos:definition """<p>Outlays on administration, planning, construction, regulation, operation, etc. of water transport facilities, affairs and services in Aboriginal communities.</p>
+<p>Aboriginal communities are those which have a predominantly indigenous population and where tribal ways and traditional roles are maintained. They are usually remote from major service centres and include communities on Aboriginal land and within pastoral leases, reserves, town camps and transit camps.</p>"""^^rdf:HTML .
+
+:1222
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Urban water transport services"@en ;
+    skos:definition "Outlays on administration, planning, construction, regulation, operation, etc. of passenger and freight water transport facilities, affairs and services in urban areas." .
+
+:1223
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Non-urban water transport services"@en ;
+    skos:definition "Outlays on administration, planning, construction, regulation, operation, etc. of passenger and freight water transport facilities, affairs and services in non-urban areas." .
+
+:123
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Rail transport"@en ;
+    skos:definition """<p>Outlays on administration, planning, construction, regulation, operation, etc. of rail transport facilities and long-haul, inter-urban and urban rapid transit railway affairs and services.</p>
+    <p>Includes outlays on:<br />
+Planning, designing, constructing, extending and improving railways and associated structures such as terminals, tunnels, bridges, etc.; and, research into the design, construction, etc. of rail transport facilities.</p>
+<p>Also includes outlays on:<br />
+Tariff and passenger fares, passenger safety and frequency of service; subsidies, grants or advances to public trading enterprises and private sector system operators; and, research and dissemination of information on rail transport affairs and services.</p>
+<p>Excludes outlays on:<br />
+Integrated urban transit systems where separate rail transport data are not available classified to GPC 1281; and, grants, advances and subsidies to rolling stock manufacturers classified to GPC 1120.</p>
+<p>Urban areas in each state include the capital city and the commuter population areas for the capital city. Non-urban areas in each state are residual to the urban areas. Data on transport services are sourced from the financial statements of transport authorities which usually specialise in providing either wholly/predominantly urban or wholly/predominantly non-urban services. Depending on the areas serviced by these authorities, some overlap between the urban/non-urban distinction may be unavoidable.</p>"""^^rdf:HTML ;
+    skos:narrower :1231 , :1232 , :1233 .
+
+:1231
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Urban rail transport services"@en ;
+    skos:definition "Outlays on administration, planning, construction, regulation, operation, etc. of urban passenger and freight rail transport facilities,affairs and services." .
+
+:1232
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Non-urban rail transport freight services"@en ;
+    skos:definition "Outlays on administration, planning, construction, regulation, operation, etc. of non-urban rail transport freight facilities, affairs and services." .
+
+:1233
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Non-urban rail transport passenger services"@en ;
+    skos:definition "Outlays on administration, planning, construction, regulation, operation, etc. of non-urban rail transport passenger facilities, affairs and services." .
+
+:124
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Air transport"@en ;
+    skos:definition """<p>Outlays on administration, construction, planning, support, operations, etc. of air transport facilities, air traffic control, passenger and freight services and controls on aircraft operation.</p>
+<p>Includes outlays on:<br />
+Planning, designing, constructing, extending or improving airports, runways, terminals, hangars, air navigation aids and the supervision, licensing and regulating of such work; and, research into the design, construction, etc. of air transport facilities.</p>
+<p>Also includes outlays on:<br />
+Tariff and passenger fares, passenger safety, registration, licensing and inspection of aircraft, pilots and crews including ground crews and allocation of routes; subsidies, grants or advances to public trading enterprises and private sector system operators; and, research and dissemination of information on air transport affairs and services.</p>
+<p>Excludes outlays on:<br />
+Establishment and regulation of pollution standards classified to GPC 0739; and, grants, advances and subsidies to aircraft manufacturers classified to GPC 1120.</p>"""^^rdf:HTML ;
+    skos:narrower :1241 , :1249 .
+
+:1241
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Aboriginal community air transport services"@en ;
+    skos:definition """<p>Outlays on administration, construction, planning, support, operations, etc. of air transport facilities and services in aboriginal communities.</p>
+<p>Aboriginal communities are those which have a predominantly indigenous population and where tribal ways and traditional roles are maintained. They are usually remote from major service centres and include communities on Aboriginal land and within pastoral leases, reserves, town camps and transit camps.</p>"""^^rdf:HTML .
+
+:1249
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other air transport services"@en ;
+    skos:definition """<p>Outlays on administration, construction, planning, support, operations, etc. of air transport facilities, air traffic control, passenger and freight services and controls on aircraft operation.</p>
+<p>Excludes outlays on:<br />
+Aboriginal community air transport services classified to GPC 1241.</p>"""^^rdf:HTML .
+
+
+:125
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Pipelines"@en ;
+    skos:narrower :1250 .
+
+:1250
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Pipelines"@en ;
+    skos:definition """<p>Outlays on administration, construction, operation, etc. of pipelines.</p>
+<p>Includes outlays on:<br />
+Designing, constructing, extending, improving, and maintaining pipelines and associated structures such as pumping stations, used for the transportation of petroleum, natural gas, etc.; and, supervising, licensing or regulating such work.</p>
+<p>Also includes outlays on:<br />
+Registration, licensing and inspection of equipment, safety standards, operator skills and training, granting of franchises and tariffs; subsidies, grants or advances to public trading enterprises and private sector system operators; provision of equipment; and, research and provision of information on pipeline transport affairs services.</p>"""^^rdf:HTML .
+
+:128
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other transport"@en ;
+    skos:narrower :1281 , :1289 .
+
+:1281
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Multi-mode urban transit systems"@en ;
+    skos:definition """<p>Outlays on administration, provision, support, regulation, operation, etc. of public transport systems where road, rail and ferry transport outlays cannot be separated.</p>
+<p>Includes outlays on:<br />
+Registration, licensing and inspection of equipment; safety standards and tariffs; subsidies, grants or advances to public trading enterprises; and, research and dissemination of information on multi-mode urban transit systems.</p>
+<p>Excludes outlays that can be classified to a specific transport mode.</p>
+<p>Urban areas in each state include the capital city and the commuter population areas for the capital city. Non-urban areas in each state are residual to the urban areas. Data on transport services are sourced from the financial statements of transport authorities which usually specialise in providing either wholly/predominantly urban or wholly/predominantly non-urban services. Depending on the areas serviced by these authorities, some overlap between the urban/non-urban distinction may be unavoidable.</p>"""^^rdf:HTML .
+
+:1289
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other transport n.e.c."@en ;
+    skos:definition "Outlays on administration, regulation, support, operation, etc. of transport affairs and services that cannot be assigned to one of the preceding sub-groups in major group GPC 12." .
+
+:129
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Communications"@en ;
+    skos:narrower :1281 , :1289 .
+
+:1250
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Communications"@en ;
+    skos:definition """<p>Outlays on administration, provision, construction, regulation, operation, etc. of communication affairs and services including postal, telephone, telegraph, cable and wireless communication systems and communication satellites.</p>
+<p>Includes outlays on:<br />
+Planning, designing, constructing, extending and improving communication systems; development and administration of regulations; assignment of frequencies; specification of markets to be served; and, setting of tariffs.</p>
+<p>Also includes outlays on:<br />
+Research into communication equipment and technology; information dissemination services; and, grants, advances and subsidies for communication equipment and services.</p>
+<p>Excludes outlays on:<br />
+Radio and television broadcasting systems classified to GPC 0830; and, water or air navigation aids classified to GPC 122 and GPC 124 respectively.</p>"""^^rdf:HTML .
+
+
+
+:13
+    a skos:Concept ;
+    skos:topConceptOf cs: ;
+    skos:prefLabel "Other economic affairs"@en ;
+    skos:narrower :131 , :132 , :133 , :139 .
+
+:131
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Storage, saleyards and markets"@en ;
+    skos:narrower :1310 , :1311.
+
+:1310
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Storage, saleyards and markets"@en ;
+    skos:definition """<p>Outlays on administration, planning, licensing, support, regulation, inspection, construction, maintenance, operation, etc. of storage and warehousing.</p>
+<p>Includes outlays on:<br />
+Grants or other assistance for the provision or operation of storage facilities, such as grain elevators, bulk sugar terminals, wool stores, and government bonded warehouses; and, development and monitoring of storage and warehousing regulations.</p>
+<p>Excludes outlays on:<br />
+Development and monitoring of regulations concerning sales practices, labelling of packaged food and other goods intended for household consumption classified to GPC 1390.</p>"""^^rdf:HTML .
+
+:1311
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Rural storage, saleyards and markets"@en ;
+    skos:definition """<p>Outlays on administration, planning, licensing, support, regulation, inspection, construction, maintenance, operation, etc. of yards and markets where sales of rural produce, livestock and other goods are conducted.</p>
+<p>Includes outlays on:<br />
+Fishmarkets, produce markets and saleyards.
+<p>Excludes outlays on:<br />
+Development and monitoring of regulations concerning sales practices, labelling of packaged food and other goods intended for household consumption classified to GPC 1390.</p>"""^^rdf:HTML .
+
+:132
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Tourism and area promotion"@en ;
+    skos:narrower :1320 .
+
+:1320
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Tourism and area promotion"@en ;
+    skos:definition """<p>Outlays on administration, regulation, planning, development, research, support, operation, etc. of tourism and area promotion to attract tourists.Also covers local government promotion to attract development.</p>
+<p>Includes outlays on:<br />
+Tourist bureaux both in Australia and overseas, information offices, caravan parks and camping areas; and, liaison activities with transportation establishments, the hotel and restaurant industry and other industries benefiting from the presence of tourists.</p>
+<p>Excludes outlays on:<br />
+National parks and wildlife services classified to GPC 0811.</p>"""^^rdf:HTML .
+
+:133
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Labour and employment affairs"@en ;
+    skos:narrower :1331 , :1339 .
+
+:1331
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Vocational training"@en ;
+    skos:definition """<p>Outlays on administration, support, regulation, research, etc. oftraining programs such as apprenticeship schemes designed to facilitate entry into the workforce of people currently not employed or in need of retraining.</p>
+<p>Excludes outlays on:<br />
+Training programs provided by TAFE institutions classified to GPC 0422.</p>"""^^rdf:HTML .
+
+:1339
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other labour and employment affairs"@en ;
+    skos:definition """<p>Outlays on administration, support, regulation, research, etc. of other labour and employment affairs.</p>
+<p>Includes outlays on:<br />
+Regulation of working conditions; conciliation and arbitration; operation of employment offices; schemes to promote employment, such as unemployment relief grants through NEAT, CYSS, YESS and other similar schemes that cannot be allocated to specific industries; anti-discrimination programs; and, other programs in which general labour affairs is the chief component.</p>
+<p>Excludes outlays on:<br />
+Vocational training classified to GPC 1331; and, labour and employment affairs of a particular industry classified to the purpose which the industry serves.</p>"""^^rdf:HTML .
+
+:139
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other economic affairs n.e.c."@en ;
+    skos:narrower :1390 .
+
+:1390
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other economic affairs n.e.c."@en ;
+    skos:definition """<p>Outlays on administration, regulation, promotion, research, operation, etc. of distributive trades.</p>
+<p>Includes outlays on:<br />
+Consumer interest and protection affairs; licensing, sales practices, labelling of packaged food and other goods intended for household consumption; regulation of weights and measures, including metric conversion; price control and rationing schemes operating through retailers or wholesalers; wholesale or retail shop inspection; and, all services relating to distributive trade affairs and services n.e.c.</p>
+<p>Excludes outlays on:<br />
+Affairs related to storage and warehousing classified to GPC 1310; and, price control and rationing schemes which can be identified with a specific industry sub-group (e.g. petroleum and gas classified to GPC 091).</p>"""^^rdf:HTML ;
+    skos:narrower :13901 , :13902 , :13903.
+
+:13901
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Hotel Industry"@en ;
+    skos:definition """<p>Outlays relating to the hotel industry.</p>
+<p>Includes outlays on:<br />
+Licensing, liquor control commissions, and all hotel and restaurant affairs n.e.c.</p>"""^^rdf:HTML .
+
+:13902
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "General economic and commercial services"@en ;
+    skos:definition """<p>Outlays on administration, regulation, promotion, support, research, operation, etc. of general economic and commercial services.</p>
+<p>Includes outlays on:<br />
+Economic and commercial matters which cannot be allocated to a functional sub-group such as general regulation of monopolies and other restraints on trade and market entry and foreign commercial affairs; weather bureaux; patent offices; and, survey institutions.</p>
+<p>Excludes outlays on:<br />
+Economic and commercial services classified to a particular industry.</p>"""^^rdf:HTML .
+
+:13903
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other economic affairs and services n.e.c."@en ;
+    skos:definition "Outlays relating to other economic affairs and services n.e.c." .
+
+
+:14
+    a skos:Concept ;
+    skos:topConceptOf cs: ;
+    skos:prefLabel "Other purposes"@en ;
+    skos:narrower :141 , :142 , :143 , :149 .
+
+:141
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Public debt transactions"@en ;
+    skos:narrower :1410 .
+
+:1410
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Public debt transactions"@en ;
+    skos:definition """<p>Outlays on underwriting and floating of government loans and interest payments, including interest on government securities or under special credit arrangements with other countries.</p>
+<p>Excludes outlays on:<br />
+Administrative costs of public debt management classified to GPC 0190.</p>"""^^rdf:HTML .
+
+:142
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "General purpose inter-government transactions"@en ;
+    skos:narrower :1420 .
+
+:1420
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "General purpose inter-government transactions"@en ;
+    skos:definition "Grants, advances or other inter-government transactions that cannot be allocated to purpose." .
+
+:143
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Natural disaster relief"@en ;
+    skos:narrower :1430 .
+
+:1430
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Natural disaster relief"@en ;
+    skos:definition """<p>Outlays on administration, planning, support, provision, etc.of programs concerned with the immediate relief of victims of drought, fires, floods, cyclones and other natural disasters, and with the initial restoration of community services and facilities.</p>
+<p>Includes outlays on:<br />
+Food, materials, equipment, etc. used in connection with natural disasters.</p>
+<p>Excludes outlays on:<br />
+Maintenance of state emergency services, such as through local government contributions, classified to GPC 0390; state emergency service operations that cannot be allocated to natural disaster relief classified to GPC 0390 or GPC 0629; relief of victims of man-made disasters classified to GPC 0629; reconstruction activities following man-made disasters classified to purpose; and, long term reconstruction and relief activities following natural disasters classified to purpose.</p>"""^^rdf:HTML .
+
+:149
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other purposes n.e.c."@en ;
+    skos:narrower :1430 .
+
+:1490
+    a skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Other purposes n.e.c."@en ;
+    skos:definition """<p>Outlays that cannot be assigned to one of the major groups GPC 01 to GPC 13 and the preceding sub-group of GPC 14.</p>
+<p>Includes transactions relating to plant and equipment which cannot be classified to specific purposes and residual items (such as the cost of works on private land, purchases of land and buildings, the rent of premises, works depots and engineering and employment overheads) that cannot be classified to purpose.</p>"""^^rdf:HTML .

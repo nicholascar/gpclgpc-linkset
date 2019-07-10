@@ -1,0 +1,19 @@
+@prefix gpc: <http://linked.data.gov.au/def/gpc/> .
+@prefix lgpc: <http://linked.data.gov.au/def/lgpc/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+lgpc:01 skos:exactMatch gpc:01 .
+
+lgpc:08 skos:narrowMatch gpc:08 .
+
+lgpc:0423 skos:broadMatch gpc:1020 .
+
+lgpc:0441 skos:broadMatch gpc:1211 .
+lgpc:0441 skos:broadMatch gpc:1212 .
+
+lgpc:0459 skos:narrowMatch gpc:1231 .
+lgpc:0459 skos:narrowMatch gpc:1232 .
+lgpc:0459 skos:narrowMatch gpc:1233 .
+lgpc:0459 skos:narrowMatch gpc:1250 .
+lgpc:0459 skos:narrowMatch gpc:1281 .
+lgpc:0459 skos:narrowMatch gpc:1289 .
