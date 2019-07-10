@@ -46,6 +46,6 @@ The correspondences that constitute the links in this Linkset are considered par
 ## Contacts
 *Linkset author & technical contact:*  
 **Nicholas Car**  
-SURROUND Australia Ptl Ltd  
+SURROUND Australia Pty Ltd  
 <nicholas.car@surroundaustralia.com>  
 <http://orcid.org/0000-0002-8742-7730>  
