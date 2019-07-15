@@ -1,0 +1,1442 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix loci: <http://linked.data.gov.au/def/loci#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix : <http://linked.data.gov.au/dataset/gpclgpc/statement/> .
+@prefix method: <http://linked.data.gov.au/dataset/gpclgpc/method> .
+@prefix nick: <http://linked.data.gov.au/dataset/gpclgpc/nick> .
+
+@prefix gpc: <http://linked.data.gov.au/def/gpc/> .
+@prefix lgpc: <http://linked.data.gov.au/def/lgpc/> .
+
+
+<http://linked.data.gov.au/dataset/gpclgpc>
+    a loci:Linkset ;
+    dct:title "LGPC / COFOG Linkset" ;
+    dct:description """This Linkset contains [SKOS mapping properties](https://www.w3.org/TR/skos-reference/#mapping) between Concepts in the [GPC](http://linked.data.gov.au/def/gpc) and Concepts in the [LGPC](http://linked.data.gov.au/def/lgpc) vocabularies.
+
+GPC, "Government Purpose Classification" is an [Australian Bureau of Statistics (ABS)](https://www.abs.gov.au) a vocabulary of classifiers for use in the collection, analysis and dissemination of local government finance statistics in Australia. It is online as a webpage as the [Revised Government Purpose Classification 2006](https://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/5514.0.55.001Appendix92005).
+
+LGPC, "Local Government Purpose Classification" is an [Australian Bureau of Statistics (ABS)](https://www.abs.gov.au) a vocabulary of classifiers for use in the collection, analysis and dissemination of local government finance statistics in Australia. It is online as a webpage as the [Local Government Purpose Classification, 2008](https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/5514.0.55.0022008).
+
+The original LGPC document publication, linked to immediately above, contains the correspondence information used for this Linkset."""@en ;
+    dct:creator nick: ;
+    dct:created "2019-07-10"^^xsd:date ;
+    # dct:issued ""^^xsd:date ; # not given yet
+    # dct:modified ""^^xsd:date ; # not given yet
+    void:subjectsTarget <http://linked.data.gov.au/def/gpc> ;
+    void:linkPredicate skos:broadMatch , skos:exactMatch , skos:narrowMatch ;
+    void:objectsTarget <http://linked.data.gov.au/def/lgpc> ;
+    loci:hadGenerationMethod method: .
+
+
+method: a prov:Plan ;
+    rdfs:label "Transcription from Source" ;
+    rdfs:seeAlso <https://github.com/CSIRO-enviro-informatics/gpclgpc-linkset/method> ;
+    rdfs:comment "The method used to create this Linkset was a manual transcription of correspondences provided by the ABS with the publication of the LGPC. See the code repository containing this Linkset for a copy of that ABS publication. the COFOG Correspondences are given on pages 46-50. The correspondences, as transcribed from the PDF document, are presented in the Excel file correspondences.xlsx in the methods folder of this vocab's repository." ;
+    prov:wasAttributedTo nick: ;
+    prov:generatedAtTime "2019-07-01"^^xsd:date .
+
+
+nick:
+    a owl:NamedIndividual , sdo:Person ;
+    sdo:email "nicholas.car@surroundaustralia.com" ;
+    sdo:identifier <http://orcid.org/0000-0002-8742-7730> ;
+    sdo:memberOf [
+        rdfs:seeAlso <https://surroundaustralia.com> ;
+        sdo:name "SURROUND Australia Pty Ltd"
+    ] ;
+    sdo:name "Nicholas J. Car" .
+
+:s001
+    a rdf:Statement ;
+    rdf:subject lgpc:0446 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1219 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s002
+    a rdf:Statement ;
+    rdf:subject lgpc:0412 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:1339 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s003
+    a rdf:Statement ;
+    rdf:subject lgpc:0559 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0739 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s004
+    a rdf:Statement ;
+    rdf:subject lgpc:0710 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0560 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s005
+    a rdf:Statement ;
+    rdf:subject lgpc:0821 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0820 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s006
+    a rdf:Statement ;
+    rdf:subject lgpc:0990 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1490 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s007
+    a rdf:Statement ;
+    rdf:subject lgpc:0111 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0190 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s008
+    a rdf:Statement ;
+    rdf:subject lgpc:07 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:06 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s009
+    a rdf:Statement ;
+    rdf:subject lgpc:0540 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0811 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s010
+    a rdf:Statement ;
+    rdf:subject lgpc:0730 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0549 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s011
+    a rdf:Statement ;
+    rdf:subject lgpc:03 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:03 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s012
+    a rdf:Statement ;
+    rdf:subject lgpc:0190 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0190 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s013
+    a rdf:Statement ;
+    rdf:subject lgpc:1099 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0690 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s014
+    a rdf:Statement ;
+    rdf:subject lgpc:0444 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1211 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s015
+    a rdf:Statement ;
+    rdf:subject lgpc:1012 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0711 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s016
+    a rdf:Statement ;
+    rdf:subject lgpc:0463 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1390 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s017
+    a rdf:Statement ;
+    rdf:subject lgpc:0815 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0819 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s018
+    a rdf:Statement ;
+    rdf:subject lgpc:0825 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0820 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s019
+    a rdf:Statement ;
+    rdf:subject lgpc:0553 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0739 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s020
+    a rdf:Statement ;
+    rdf:subject lgpc:0720 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:0530 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s021
+    a rdf:Statement ;
+    rdf:subject lgpc:0442 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1211 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s022
+    a rdf:Statement ;
+    rdf:subject lgpc:1011 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0621 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s023
+    a rdf:Statement ;
+    rdf:subject lgpc:0511 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0731 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s024
+    a rdf:Statement ;
+    rdf:subject lgpc:0521 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0739 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s025
+    a rdf:Statement ;
+    rdf:subject lgpc:1029 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0622 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s026
+    a rdf:Statement ;
+    rdf:subject lgpc:1021 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0711 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s027
+    a rdf:Statement ;
+    rdf:subject lgpc:1031 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0711 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s028
+    a rdf:Statement ;
+    rdf:subject lgpc:0819 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0819 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s029
+    a rdf:Statement ;
+    rdf:subject lgpc:0490 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1390 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s030
+    a rdf:Statement ;
+    rdf:subject lgpc:0530 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0739 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s031
+    a rdf:Statement ;
+    rdf:subject lgpc:0446 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1211 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s032
+    a rdf:Statement ;
+    rdf:subject lgpc:1031 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0623 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s033
+    a rdf:Statement ;
+    rdf:subject lgpc:0112 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0190 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s034
+    a rdf:Statement ;
+    rdf:subject lgpc:0990 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:1331 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s035
+    a rdf:Statement ;
+    rdf:subject lgpc:0620 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0729 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s036
+    a rdf:Statement ;
+    rdf:subject lgpc:0463 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:1310 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s037
+    a rdf:Statement ;
+    rdf:subject lgpc:0530 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0731 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s038
+    a rdf:Statement ;
+    rdf:subject lgpc:0310 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:0312 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s039
+    a rdf:Statement ;
+    rdf:subject lgpc:0813 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0819 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s040
+    a rdf:Statement ;
+    rdf:subject lgpc:0630 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0729 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s041
+    a rdf:Statement ;
+    rdf:subject lgpc:0812 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0819 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s042
+    a rdf:Statement ;
+    rdf:subject lgpc:0459 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:1250 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s043
+    a rdf:Statement ;
+    rdf:subject lgpc:0444 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1212 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s044
+    a rdf:Statement ;
+    rdf:subject lgpc:0451 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:1223 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s045
+    a rdf:Statement ;
+    rdf:subject lgpc:1099 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0629 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s046
+    a rdf:Statement ;
+    rdf:subject lgpc:0824 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0820 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s047
+    a rdf:Statement ;
+    rdf:subject lgpc:0890 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1320 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s048
+    a rdf:Statement ;
+    rdf:subject lgpc:0540 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0739 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s049
+    a rdf:Statement ;
+    rdf:subject lgpc:0990 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0432 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s050
+    a rdf:Statement ;
+    rdf:subject lgpc:1019 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0621 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s051
+    a rdf:Statement ;
+    rdf:subject lgpc:0559 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0731 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s052
+    a rdf:Statement ;
+    rdf:subject lgpc:0829 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0820 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s053
+    a rdf:Statement ;
+    rdf:subject lgpc:0710 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0549 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s054
+    a rdf:Statement ;
+    rdf:subject lgpc:0411 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1390 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s055
+    a rdf:Statement ;
+    rdf:subject lgpc:0816 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0819 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s056
+    a rdf:Statement ;
+    rdf:subject lgpc:0452 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:1249 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s057
+    a rdf:Statement ;
+    rdf:subject lgpc:0554 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0739 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s058
+    a rdf:Statement ;
+    rdf:subject lgpc:0444 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1214 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s059
+    a rdf:Statement ;
+    rdf:subject lgpc:0790 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0570 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s060
+    a rdf:Statement ;
+    rdf:subject lgpc:0459 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:1232 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s061
+    a rdf:Statement ;
+    rdf:subject lgpc:0555 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0731 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s062
+    a rdf:Statement ;
+    rdf:subject lgpc:0432 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0922 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s063
+    a rdf:Statement ;
+    rdf:subject lgpc:0431 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:0911 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s064
+    a rdf:Statement ;
+    rdf:subject lgpc:0451 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:1211 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s065
+    a rdf:Statement ;
+    rdf:subject lgpc:0790 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1490 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s066
+    a rdf:Statement ;
+    rdf:subject lgpc:0823 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0820 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s067
+    a rdf:Statement ;
+    rdf:subject lgpc:0690 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0799 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s068
+    a rdf:Statement ;
+    rdf:subject lgpc:0190 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1490 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s069
+    a rdf:Statement ;
+    rdf:subject lgpc:0890 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0890 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s070
+    a rdf:Statement ;
+    rdf:subject lgpc:0320 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0390 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s071
+    a rdf:Statement ;
+    rdf:subject lgpc:1091 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0690 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s072
+    a rdf:Statement ;
+    rdf:subject lgpc:0461 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:1110 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s073
+    a rdf:Statement ;
+    rdf:subject lgpc:0620 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0712 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s074
+    a rdf:Statement ;
+    rdf:subject lgpc:0452 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:1241 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s075
+    a rdf:Statement ;
+    rdf:subject lgpc:0610 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0711 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s076
+    a rdf:Statement ;
+    rdf:subject lgpc:0519 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0739 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s077
+    a rdf:Statement ;
+    rdf:subject lgpc:0551 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0739 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s078
+    a rdf:Statement ;
+    rdf:subject lgpc:0459 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:1233 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s079
+    a rdf:Statement ;
+    rdf:subject lgpc:0790 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0542 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s080
+    a rdf:Statement ;
+    rdf:subject lgpc:0640 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0799 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s081
+    a rdf:Statement ;
+    rdf:subject lgpc:0445 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1219 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s082
+    a rdf:Statement ;
+    rdf:subject lgpc:0459 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:1289 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s083
+    a rdf:Statement ;
+    rdf:subject lgpc:0451 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:1222 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s084
+    a rdf:Statement ;
+    rdf:subject lgpc:0442 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:1213 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s085
+    a rdf:Statement ;
+    rdf:subject lgpc:0511 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0739 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s086
+    a rdf:Statement ;
+    rdf:subject lgpc:0469 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1020 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s087
+    a rdf:Statement ;
+    rdf:subject lgpc:0553 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0731 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s088
+    a rdf:Statement ;
+    rdf:subject lgpc:1091 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0711 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s089
+    a rdf:Statement ;
+    rdf:subject lgpc:0710 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0541 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s090
+    a rdf:Statement ;
+    rdf:subject lgpc:0830 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0890 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s091
+    a rdf:Statement ;
+    rdf:subject lgpc:0422 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1010 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s092
+    a rdf:Statement ;
+    rdf:subject lgpc:0826 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0820 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s093
+    a rdf:Statement ;
+    rdf:subject lgpc:0190 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0110 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s094
+    a rdf:Statement ;
+    rdf:subject lgpc:0443 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1214 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s095
+    a rdf:Statement ;
+    rdf:subject lgpc:0421 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1010 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s096
+    a rdf:Statement ;
+    rdf:subject lgpc:0465 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1390 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s097
+    a rdf:Statement ;
+    rdf:subject lgpc:1091 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0629 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s098
+    a rdf:Statement ;
+    rdf:subject lgpc:0822 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0820 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s099
+    a rdf:Statement ;
+    rdf:subject lgpc:1099 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1490 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s100
+    a rdf:Statement ;
+    rdf:subject lgpc:0790 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0590 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s101
+    a rdf:Statement ;
+    rdf:subject lgpc:0690 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0791 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s102
+    a rdf:Statement ;
+    rdf:subject lgpc:0445 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1211 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s103
+    a rdf:Statement ;
+    rdf:subject lgpc:0441 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1212 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s104
+    a rdf:Statement ;
+    rdf:subject lgpc:0910 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:0431 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s105
+    a rdf:Statement ;
+    rdf:subject lgpc:0439 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0929 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s106
+    a rdf:Statement ;
+    rdf:subject lgpc:0730 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0550 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s107
+    a rdf:Statement ;
+    rdf:subject lgpc:0490 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1490 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s108
+    a rdf:Statement ;
+    rdf:subject lgpc:0443 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1211 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s109
+    a rdf:Statement ;
+    rdf:subject lgpc:0890 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1490 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s110
+    a rdf:Statement ;
+    rdf:subject lgpc:0814 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0819 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s111
+    a rdf:Statement ;
+    rdf:subject lgpc:1099 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:1430 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s112
+    a rdf:Statement ;
+    rdf:subject lgpc:0432 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0921 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s113
+    a rdf:Statement ;
+    rdf:subject lgpc:0459 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:1281 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s114
+    a rdf:Statement ;
+    rdf:subject lgpc:1039 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0623 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s115
+    a rdf:Statement ;
+    rdf:subject lgpc:0555 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0739 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s116
+    a rdf:Statement ;
+    rdf:subject lgpc:05 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:07 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s117
+    a rdf:Statement ;
+    rdf:subject lgpc:1021 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0622 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s118
+    a rdf:Statement ;
+    rdf:subject lgpc:01 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:01 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s119
+    a rdf:Statement ;
+    rdf:subject lgpc:0390 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0390 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s120
+    a rdf:Statement ;
+    rdf:subject lgpc:0630 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0721 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s121
+    a rdf:Statement ;
+    rdf:subject lgpc:0521 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0731 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s122
+    a rdf:Statement ;
+    rdf:subject lgpc:0464 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1320 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s123
+    a rdf:Statement ;
+    rdf:subject lgpc:0552 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0731 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s124
+    a rdf:Statement ;
+    rdf:subject lgpc:0529 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0731 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s125
+    a rdf:Statement ;
+    rdf:subject lgpc:0554 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0731 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s126
+    a rdf:Statement ;
+    rdf:subject lgpc:04 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:09 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s127
+    a rdf:Statement ;
+    rdf:subject lgpc:1012 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0621 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s128
+    a rdf:Statement ;
+    rdf:subject lgpc:0828 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0820 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s129
+    a rdf:Statement ;
+    rdf:subject lgpc:0469 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:1290 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s130
+    a rdf:Statement ;
+    rdf:subject lgpc:0423 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1020 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s131
+    a rdf:Statement ;
+    rdf:subject lgpc:0439 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0990 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s132
+    a rdf:Statement ;
+    rdf:subject lgpc:0590 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0739 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s133
+    a rdf:Statement ;
+    rdf:subject lgpc:0540 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0731 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s134
+    a rdf:Statement ;
+    rdf:subject lgpc:0529 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0739 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s135
+    a rdf:Statement ;
+    rdf:subject lgpc:0519 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0731 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s136
+    a rdf:Statement ;
+    rdf:subject lgpc:0441 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1211 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s137
+    a rdf:Statement ;
+    rdf:subject lgpc:0551 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0731 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s138
+    a rdf:Statement ;
+    rdf:subject lgpc:0552 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0739 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s139
+    a rdf:Statement ;
+    rdf:subject lgpc:0120 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:1410 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s140
+    a rdf:Statement ;
+    rdf:subject lgpc:0130 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:1430 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s141
+    a rdf:Statement ;
+    rdf:subject lgpc:0459 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:1231 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s142
+    a rdf:Statement ;
+    rdf:subject lgpc:0390 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1490 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s143
+    a rdf:Statement ;
+    rdf:subject lgpc:0811 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0819 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s144
+    a rdf:Statement ;
+    rdf:subject lgpc:0690 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1490 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s145
+    a rdf:Statement ;
+    rdf:subject lgpc:0439 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0919 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s146
+    a rdf:Statement ;
+    rdf:subject lgpc:0990 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0490 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s147
+    a rdf:Statement ;
+    rdf:subject lgpc:08 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:08 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s148
+    a rdf:Statement ;
+    rdf:subject lgpc:0920 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:0449 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s149
+    a rdf:Statement ;
+    rdf:subject lgpc:0840 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0890 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s150
+    a rdf:Statement ;
+    rdf:subject lgpc:0469 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:1120 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s151
+    a rdf:Statement ;
+    rdf:subject lgpc:0827 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:0820 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s152
+    a rdf:Statement ;
+    rdf:subject lgpc:0990 ;
+    rdf:predicate skos:narrowMatch ;
+    rdf:object gpc:0439 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s153
+    a rdf:Statement ;
+    rdf:subject lgpc:0590 ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object gpc:1490 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
+
+:s154
+    a rdf:Statement ;
+    rdf:subject lgpc:0462 ;
+    rdf:predicate skos:exactMatch ;
+    rdf:object gpc:1130 ;
+    dct:created "2019-07-10"^^xsd:date ;
+    loci:hadGenerationMethod :method ;
+.
