@@ -1,4 +1,8 @@
+# baseURI http://linked.data.gov.au/dataset/gpclgpc
+
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix gpc: <http://linked.data.gov.au/def/gpc/> .
+@prefix lgpc: <http://linked.data.gov.au/def/lgpc/> .
 @prefix loci: <http://linked.data.gov.au/def/loci#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -8,14 +12,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-@prefix : <http://linked.data.gov.au/dataset/gpclgpc/statement/> .
-@prefix method: <http://linked.data.gov.au/dataset/gpclgpc/method> .
-@prefix nick: <http://linked.data.gov.au/dataset/gpclgpc/nick> .
-
-@prefix gpc: <http://linked.data.gov.au/def/gpc/> .
-@prefix lgpc: <http://linked.data.gov.au/def/lgpc/> .
-
 
 <http://linked.data.gov.au/dataset/gpclgpc>
     a loci:Linkset ;
@@ -27,1416 +23,1107 @@ GPC, "Government Purpose Classification" is an [Australian Bureau of Statistics 
 LGPC, "Local Government Purpose Classification" is an [Australian Bureau of Statistics (ABS)](https://www.abs.gov.au) a vocabulary of classifiers for use in the collection, analysis and dissemination of local government finance statistics in Australia. It is online as a webpage as the [Local Government Purpose Classification, 2008](https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/5514.0.55.0022008).
 
 The original LGPC document publication, linked to immediately above, contains the correspondence information used for this Linkset."""@en ;
-    dct:creator nick: ;
-    dct:created "2019-07-10"^^xsd:date ;
+    dct:creator <nick> ;
     # dct:issued ""^^xsd:date ; # not given yet
     # dct:modified ""^^xsd:date ; # not given yet
     void:subjectsTarget <http://linked.data.gov.au/def/gpc> ;
     void:linkPredicate skos:broadMatch , skos:exactMatch , skos:narrowMatch ;
     void:objectsTarget <http://linked.data.gov.au/def/lgpc> ;
-    loci:hadGenerationMethod method: .
+    loci:hadGenerationMethod [
+        a prov:Plan ;
+        rdfs:label "Transcription from Source" ;
+        rdfs:seeAlso <https://github.com/CSIRO-enviro-informatics/gpclgpc-linkset/method> ;
+        rdfs:comment "The method used to create this Linkset was a manual transcription of correspondences provided by the ABS with the publication of the LGPC. See the code repository containing this Linkset for a copy of that ABS publication. the COFOG Correspondences are given on pages 46-50. The correspondences, as transcribed from the PDF document, are presented in the Excel file correspondences.xlsx in the methods folder of this vocab's repository." ;
+        prov:wasAttributedTo <nick> ;
+        prov:generatedAtTime "2019-07-01"^^xsd:date ;
+    ] .
 
-
-method: a prov:Plan ;
-    rdfs:label "Transcription from Source" ;
-    rdfs:seeAlso <https://github.com/CSIRO-enviro-informatics/gpclgpc-linkset/method> ;
-    rdfs:comment "The method used to create this Linkset was a manual transcription of correspondences provided by the ABS with the publication of the LGPC. See the code repository containing this Linkset for a copy of that ABS publication. the COFOG Correspondences are given on pages 46-50. The correspondences, as transcribed from the PDF document, are presented in the Excel file correspondences.xlsx in the methods folder of this vocab's repository." ;
-    prov:wasAttributedTo nick: ;
-    prov:generatedAtTime "2019-07-01"^^xsd:date .
-
-
-nick:
-    a owl:NamedIndividual , sdo:Person ;
-    sdo:email "nicholas.car@surroundaustralia.com" ;
-    sdo:identifier <http://orcid.org/0000-0002-8742-7730> ;
-    sdo:memberOf [
-        rdfs:seeAlso <https://surroundaustralia.com> ;
-        sdo:name "SURROUND Australia Pty Ltd"
+<nick>
+  a owl:NamedIndividual ;
+  a sdo:Person ;
+  sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
+  sdo:identifier <http://orcid.org/0000-0002-8742-7730> ;
+  sdo:memberOf [
+      sdo:url <https://surroundaustralia.com> ;
+      sdo:name "SURROUND Australia Pty Ltd" ;
     ] ;
-    sdo:name "Nicholas J. Car" .
-
-:s001
-    a rdf:Statement ;
-    rdf:subject lgpc:0446 ;
-    rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1219 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+  sdo:name "Nicholas J. Car" ;
 .
 
-:s002
+<001>
     a rdf:Statement ;
-    rdf:subject lgpc:0412 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0446> ;
+    rdf:predicate skos:broadMatch ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1219> ;
+.
+
+<002>
+    a rdf:Statement ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0412> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:1339 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1339> ;
 .
 
-:s003
+<003>
     a rdf:Statement ;
-    rdf:subject lgpc:0559 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0559> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0739 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0739> ;
 .
 
-:s004
+<004>
     a rdf:Statement ;
-    rdf:subject lgpc:0710 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0710> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0560 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0560> ;
 .
 
-:s005
+<005>
     a rdf:Statement ;
-    rdf:subject lgpc:0821 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0821> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0820 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0820> ;
 .
 
-:s006
+<006>
     a rdf:Statement ;
-    rdf:subject lgpc:0990 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0990> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1490 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1490> ;
 .
 
-:s007
+<007>
     a rdf:Statement ;
-    rdf:subject lgpc:0111 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0111> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0190 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0190> ;
 .
 
-:s008
+<008>
     a rdf:Statement ;
-    rdf:subject lgpc:07 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/07> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:06 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/06> ;
 .
 
-:s009
+<009>
     a rdf:Statement ;
-    rdf:subject lgpc:0540 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0540> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0811 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0811> ;
 .
 
-:s010
+<010>
     a rdf:Statement ;
-    rdf:subject lgpc:0730 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0730> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0549 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0549> ;
 .
 
-:s011
+<011>
     a rdf:Statement ;
-    rdf:subject lgpc:03 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/03> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:03 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/03> ;
 .
 
-:s012
+<012>
     a rdf:Statement ;
-    rdf:subject lgpc:0190 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0190> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0190 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0190> ;
 .
 
-:s013
+<013>
     a rdf:Statement ;
-    rdf:subject lgpc:1099 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1099> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0690 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0690> ;
 .
 
-:s014
+<014>
     a rdf:Statement ;
-    rdf:subject lgpc:0444 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0444> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1211 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1211> ;
 .
 
-:s015
+<015>
     a rdf:Statement ;
-    rdf:subject lgpc:1012 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1012> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0711 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0711> ;
 .
 
-:s016
+<016>
     a rdf:Statement ;
-    rdf:subject lgpc:0463 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0463> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1390 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1390> ;
 .
 
-:s017
+<017>
     a rdf:Statement ;
-    rdf:subject lgpc:0815 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0815> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0819 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0819> ;
 .
 
-:s018
+<018>
     a rdf:Statement ;
-    rdf:subject lgpc:0825 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0825> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0820 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0820> ;
 .
 
-:s019
+<019>
     a rdf:Statement ;
-    rdf:subject lgpc:0553 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0553> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0739 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0739> ;
 .
 
-:s020
+<020>
     a rdf:Statement ;
-    rdf:subject lgpc:0720 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0720> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:0530 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0530> ;
 .
 
-:s021
+<021>
     a rdf:Statement ;
-    rdf:subject lgpc:0442 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0442> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1211 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1211> ;
 .
 
-:s022
+<022>
     a rdf:Statement ;
-    rdf:subject lgpc:1011 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1011> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0621 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0621> ;
 .
 
-:s023
+<023>
     a rdf:Statement ;
-    rdf:subject lgpc:0511 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0511> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0731 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0731> ;
 .
 
-:s024
+<024>
     a rdf:Statement ;
-    rdf:subject lgpc:0521 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0521> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0739 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0739> ;
 .
 
-:s025
+<025>
     a rdf:Statement ;
-    rdf:subject lgpc:1029 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1029> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0622 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0622> ;
 .
 
-:s026
+<026>
     a rdf:Statement ;
-    rdf:subject lgpc:1021 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1021> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0711 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0711> ;
 .
 
-:s027
+<027>
     a rdf:Statement ;
-    rdf:subject lgpc:1031 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1031> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0711 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0711> ;
 .
 
-:s028
+<028>
     a rdf:Statement ;
-    rdf:subject lgpc:0819 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0819> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0819 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0819> ;
 .
 
-:s029
+<029>
     a rdf:Statement ;
-    rdf:subject lgpc:0490 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0490> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1390 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1390> ;
 .
 
-:s030
+<030>
     a rdf:Statement ;
-    rdf:subject lgpc:0530 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0530> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0739 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0739> ;
 .
 
-:s031
+<031>
     a rdf:Statement ;
-    rdf:subject lgpc:0446 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0446> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1211 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1211> ;
 .
 
-:s032
+<032>
     a rdf:Statement ;
-    rdf:subject lgpc:1031 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1031> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0623 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0623> ;
 .
 
-:s033
+<033>
     a rdf:Statement ;
-    rdf:subject lgpc:0112 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0112> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0190 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0190> ;
 .
 
-:s034
+<034>
     a rdf:Statement ;
-    rdf:subject lgpc:0990 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0990> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:1331 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1331> ;
 .
 
-:s035
+<035>
     a rdf:Statement ;
-    rdf:subject lgpc:0620 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0620> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0729 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0729> ;
 .
 
-:s036
+<036>
     a rdf:Statement ;
-    rdf:subject lgpc:0463 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0463> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:1310 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1310> ;
 .
 
-:s037
+<037>
     a rdf:Statement ;
-    rdf:subject lgpc:0530 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0530> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0731 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0731> ;
 .
 
-:s038
+<038>
     a rdf:Statement ;
-    rdf:subject lgpc:0310 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0310> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:0312 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0312> ;
 .
 
-:s039
+<039>
     a rdf:Statement ;
-    rdf:subject lgpc:0813 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0813> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0819 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0819> ;
 .
 
-:s040
+<040>
     a rdf:Statement ;
-    rdf:subject lgpc:0630 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0630> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0729 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0729> ;
 .
 
-:s041
+<041>
     a rdf:Statement ;
-    rdf:subject lgpc:0812 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0812> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0819 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0819> ;
 .
 
-:s042
+<042>
     a rdf:Statement ;
-    rdf:subject lgpc:0459 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0459> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:1250 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1250> ;
 .
 
-:s043
+<043>
     a rdf:Statement ;
-    rdf:subject lgpc:0444 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0444> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1212 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1212> ;
 .
 
-:s044
+<044>
     a rdf:Statement ;
-    rdf:subject lgpc:0451 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0451> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:1223 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1223> ;
 .
 
-:s045
+<045>
     a rdf:Statement ;
-    rdf:subject lgpc:1099 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1099> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0629 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0629> ;
 .
 
-:s046
+<046>
     a rdf:Statement ;
-    rdf:subject lgpc:0824 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0824> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0820 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0820> ;
 .
 
-:s047
+<047>
     a rdf:Statement ;
-    rdf:subject lgpc:0890 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0890> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1320 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1320> ;
 .
 
-:s048
+<048>
     a rdf:Statement ;
-    rdf:subject lgpc:0540 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0540> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0739 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0739> ;
 .
 
-:s049
+<049>
     a rdf:Statement ;
-    rdf:subject lgpc:0990 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0990> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0432 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0432> ;
 .
 
-:s050
+<050>
     a rdf:Statement ;
-    rdf:subject lgpc:1019 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1019> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0621 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0621> ;
 .
 
-:s051
+<051>
     a rdf:Statement ;
-    rdf:subject lgpc:0559 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0559> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0731 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0731> ;
 .
 
-:s052
+<052>
     a rdf:Statement ;
-    rdf:subject lgpc:0829 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0829> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0820 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0820> ;
 .
 
-:s053
+<053>
     a rdf:Statement ;
-    rdf:subject lgpc:0710 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0710> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0549 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0549> ;
 .
 
-:s054
+<054>
     a rdf:Statement ;
-    rdf:subject lgpc:0411 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0411> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1390 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1390> ;
 .
 
-:s055
+<055>
     a rdf:Statement ;
-    rdf:subject lgpc:0816 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0816> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0819 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0819> ;
 .
 
-:s056
+<056>
     a rdf:Statement ;
-    rdf:subject lgpc:0452 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0452> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:1249 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1249> ;
 .
 
-:s057
+<057>
     a rdf:Statement ;
-    rdf:subject lgpc:0554 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0554> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0739 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0739> ;
 .
 
-:s058
+<058>
     a rdf:Statement ;
-    rdf:subject lgpc:0444 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0444> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1214 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1214> ;
 .
 
-:s059
+<059>
     a rdf:Statement ;
-    rdf:subject lgpc:0790 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0790> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0570 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0570> ;
 .
 
-:s060
+<060>
     a rdf:Statement ;
-    rdf:subject lgpc:0459 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0459> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:1232 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1232> ;
 .
 
-:s061
+<061>
     a rdf:Statement ;
-    rdf:subject lgpc:0555 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0555> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0731 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0731> ;
 .
 
-:s062
+<062>
     a rdf:Statement ;
-    rdf:subject lgpc:0432 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0432> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0922 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0922> ;
 .
 
-:s063
+<063>
     a rdf:Statement ;
-    rdf:subject lgpc:0431 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0431> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:0911 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0911> ;
 .
 
-:s064
+<064>
     a rdf:Statement ;
-    rdf:subject lgpc:0451 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0451> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:1211 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1211> ;
 .
 
-:s065
+<065>
     a rdf:Statement ;
-    rdf:subject lgpc:0790 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0790> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1490 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1490> ;
 .
 
-:s066
+<066>
     a rdf:Statement ;
-    rdf:subject lgpc:0823 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0823> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0820 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0820> ;
 .
 
-:s067
+<067>
     a rdf:Statement ;
-    rdf:subject lgpc:0690 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0690> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0799 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0799> ;
 .
 
-:s068
+<068>
     a rdf:Statement ;
-    rdf:subject lgpc:0190 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0190> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1490 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1490> ;
 .
 
-:s069
+<069>
     a rdf:Statement ;
-    rdf:subject lgpc:0890 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0890> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0890 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0890> ;
 .
 
-:s070
+<070>
     a rdf:Statement ;
-    rdf:subject lgpc:0320 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0320> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0390 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0390> ;
 .
 
-:s071
+<071>
     a rdf:Statement ;
-    rdf:subject lgpc:1091 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1091> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0690 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0690> ;
 .
 
-:s072
+<072>
     a rdf:Statement ;
-    rdf:subject lgpc:0461 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0461> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:1110 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1110> ;
 .
 
-:s073
+<073>
     a rdf:Statement ;
-    rdf:subject lgpc:0620 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0620> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0712 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0712> ;
 .
 
-:s074
+<074>
     a rdf:Statement ;
-    rdf:subject lgpc:0452 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0452> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:1241 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1241> ;
 .
 
-:s075
+<075>
     a rdf:Statement ;
-    rdf:subject lgpc:0610 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0610> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0711 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0711> ;
 .
 
-:s076
+<076>
     a rdf:Statement ;
-    rdf:subject lgpc:0519 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0519> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0739 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0739> ;
 .
 
-:s077
+<077>
     a rdf:Statement ;
-    rdf:subject lgpc:0551 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0551> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0739 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0739> ;
 .
 
-:s078
+<078>
     a rdf:Statement ;
-    rdf:subject lgpc:0459 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0459> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:1233 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1233> ;
 .
 
-:s079
+<079>
     a rdf:Statement ;
-    rdf:subject lgpc:0790 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0790> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0542 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0542> ;
 .
 
-:s080
+<080>
     a rdf:Statement ;
-    rdf:subject lgpc:0640 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0640> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0799 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0799> ;
 .
 
-:s081
+<081>
     a rdf:Statement ;
-    rdf:subject lgpc:0445 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0445> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1219 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1219> ;
 .
 
-:s082
+<082>
     a rdf:Statement ;
-    rdf:subject lgpc:0459 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0459> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:1289 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1289> ;
 .
 
-:s083
+<083>
     a rdf:Statement ;
-    rdf:subject lgpc:0451 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0451> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:1222 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1222> ;
 .
 
-:s084
+<084>
     a rdf:Statement ;
-    rdf:subject lgpc:0442 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0442> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:1213 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1213> ;
 .
 
-:s085
+<085>
     a rdf:Statement ;
-    rdf:subject lgpc:0511 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0511> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0739 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0739> ;
 .
 
-:s086
+<086>
     a rdf:Statement ;
-    rdf:subject lgpc:0469 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0469> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1020 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1020> ;
 .
 
-:s087
+<087>
     a rdf:Statement ;
-    rdf:subject lgpc:0553 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0553> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0731 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0731> ;
 .
 
-:s088
+<088>
     a rdf:Statement ;
-    rdf:subject lgpc:1091 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1091> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0711 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0711> ;
 .
 
-:s089
+<089>
     a rdf:Statement ;
-    rdf:subject lgpc:0710 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0710> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0541 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0541> ;
 .
 
-:s090
+<090>
     a rdf:Statement ;
-    rdf:subject lgpc:0830 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0830> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0890 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0890> ;
 .
 
-:s091
+<091>
     a rdf:Statement ;
-    rdf:subject lgpc:0422 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0422> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1010 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1010> ;
 .
 
-:s092
+<092>
     a rdf:Statement ;
-    rdf:subject lgpc:0826 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0826> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0820 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0820> ;
 .
 
-:s093
+<093>
     a rdf:Statement ;
-    rdf:subject lgpc:0190 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0190> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0110 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0110> ;
 .
 
-:s094
+<094>
     a rdf:Statement ;
-    rdf:subject lgpc:0443 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0443> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1214 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1214> ;
 .
 
-:s095
+<095>
     a rdf:Statement ;
-    rdf:subject lgpc:0421 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0421> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1010 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1010> ;
 .
 
-:s096
+<096>
     a rdf:Statement ;
-    rdf:subject lgpc:0465 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0465> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1390 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1390> ;
 .
 
-:s097
+<097>
     a rdf:Statement ;
-    rdf:subject lgpc:1091 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1091> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0629 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0629> ;
 .
 
-:s098
+<098>
     a rdf:Statement ;
-    rdf:subject lgpc:0822 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0822> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0820 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0820> ;
 .
 
-:s099
+<099>
     a rdf:Statement ;
-    rdf:subject lgpc:1099 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1099> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1490 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1490> ;
 .
 
-:s100
+<100>
     a rdf:Statement ;
-    rdf:subject lgpc:0790 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0790> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0590 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0590> ;
 .
 
-:s101
+<101>
     a rdf:Statement ;
-    rdf:subject lgpc:0690 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0690> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0791 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0791> ;
 .
 
-:s102
+<102>
     a rdf:Statement ;
-    rdf:subject lgpc:0445 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0445> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1211 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1211> ;
 .
 
-:s103
+<103>
     a rdf:Statement ;
-    rdf:subject lgpc:0441 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0441> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1212 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1212> ;
 .
 
-:s104
+<104>
     a rdf:Statement ;
-    rdf:subject lgpc:0910 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0910> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:0431 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0431> ;
 .
 
-:s105
+<105>
     a rdf:Statement ;
-    rdf:subject lgpc:0439 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0439> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0929 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0929> ;
 .
 
-:s106
+<106>
     a rdf:Statement ;
-    rdf:subject lgpc:0730 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0730> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0550 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0550> ;
 .
 
-:s107
+<107>
     a rdf:Statement ;
-    rdf:subject lgpc:0490 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0490> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1490 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1490> ;
 .
 
-:s108
+<108>
     a rdf:Statement ;
-    rdf:subject lgpc:0443 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0443> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1211 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1211> ;
 .
 
-:s109
+<109>
     a rdf:Statement ;
-    rdf:subject lgpc:0890 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0890> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1490 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1490> ;
 .
 
-:s110
+<110>
     a rdf:Statement ;
-    rdf:subject lgpc:0814 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0814> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0819 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0819> ;
 .
 
-:s111
+<111>
     a rdf:Statement ;
-    rdf:subject lgpc:1099 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1099> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:1430 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1430> ;
 .
 
-:s112
+<112>
     a rdf:Statement ;
-    rdf:subject lgpc:0432 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0432> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0921 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0921> ;
 .
 
-:s113
+<113>
     a rdf:Statement ;
-    rdf:subject lgpc:0459 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0459> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:1281 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1281> ;
 .
 
-:s114
+<114>
     a rdf:Statement ;
-    rdf:subject lgpc:1039 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1039> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0623 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0623> ;
 .
 
-:s115
+<115>
     a rdf:Statement ;
-    rdf:subject lgpc:0555 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0555> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0739 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0739> ;
 .
 
-:s116
+<116>
     a rdf:Statement ;
-    rdf:subject lgpc:05 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/05> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:07 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/07> ;
 .
 
-:s117
+<117>
     a rdf:Statement ;
-    rdf:subject lgpc:1021 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1021> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0622 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0622> ;
 .
 
-:s118
+<118>
     a rdf:Statement ;
-    rdf:subject lgpc:01 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/01> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:01 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/01> ;
 .
 
-:s119
+<119>
     a rdf:Statement ;
-    rdf:subject lgpc:0390 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0390> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0390 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0390> ;
 .
 
-:s120
+<120>
     a rdf:Statement ;
-    rdf:subject lgpc:0630 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0630> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0721 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0721> ;
 .
 
-:s121
+<121>
     a rdf:Statement ;
-    rdf:subject lgpc:0521 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0521> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0731 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0731> ;
 .
 
-:s122
+<122>
     a rdf:Statement ;
-    rdf:subject lgpc:0464 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0464> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1320 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1320> ;
 .
 
-:s123
+<123>
     a rdf:Statement ;
-    rdf:subject lgpc:0552 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0552> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0731 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0731> ;
 .
 
-:s124
+<124>
     a rdf:Statement ;
-    rdf:subject lgpc:0529 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0529> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0731 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0731> ;
 .
 
-:s125
+<125>
     a rdf:Statement ;
-    rdf:subject lgpc:0554 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0554> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0731 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0731> ;
 .
 
-:s126
+<126>
     a rdf:Statement ;
-    rdf:subject lgpc:04 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/04> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:09 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/09> ;
 .
 
-:s127
+<127>
     a rdf:Statement ;
-    rdf:subject lgpc:1012 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/1012> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0621 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0621> ;
 .
 
-:s128
+<128>
     a rdf:Statement ;
-    rdf:subject lgpc:0828 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0828> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0820 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0820> ;
 .
 
-:s129
+<129>
     a rdf:Statement ;
-    rdf:subject lgpc:0469 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0469> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:1290 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1290> ;
 .
 
-:s130
+<130>
     a rdf:Statement ;
-    rdf:subject lgpc:0423 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0423> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1020 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1020> ;
 .
 
-:s131
+<131>
     a rdf:Statement ;
-    rdf:subject lgpc:0439 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0439> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0990 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0990> ;
 .
 
-:s132
+<132>
     a rdf:Statement ;
-    rdf:subject lgpc:0590 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0590> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0739 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0739> ;
 .
 
-:s133
+<133>
     a rdf:Statement ;
-    rdf:subject lgpc:0540 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0540> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0731 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0731> ;
 .
 
-:s134
+<134>
     a rdf:Statement ;
-    rdf:subject lgpc:0529 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0529> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0739 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0739> ;
 .
 
-:s135
+<135>
     a rdf:Statement ;
-    rdf:subject lgpc:0519 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0519> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0731 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0731> ;
 .
 
-:s136
+<136>
     a rdf:Statement ;
-    rdf:subject lgpc:0441 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0441> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1211 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1211> ;
 .
 
-:s137
+<137>
     a rdf:Statement ;
-    rdf:subject lgpc:0551 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0551> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0731 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0731> ;
 .
 
-:s138
+<138>
     a rdf:Statement ;
-    rdf:subject lgpc:0552 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0552> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0739 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0739> ;
 .
 
-:s139
+<139>
     a rdf:Statement ;
-    rdf:subject lgpc:0120 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0120> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:1410 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1410> ;
 .
 
-:s140
+<140>
     a rdf:Statement ;
-    rdf:subject lgpc:0130 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0130> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:1430 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1430> ;
 .
 
-:s141
+<141>
     a rdf:Statement ;
-    rdf:subject lgpc:0459 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0459> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:1231 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1231> ;
 .
 
-:s142
+<142>
     a rdf:Statement ;
-    rdf:subject lgpc:0390 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0390> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1490 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1490> ;
 .
 
-:s143
+<143>
     a rdf:Statement ;
-    rdf:subject lgpc:0811 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0811> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0819 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0819> ;
 .
 
-:s144
+<144>
     a rdf:Statement ;
-    rdf:subject lgpc:0690 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0690> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1490 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1490> ;
 .
 
-:s145
+<145>
     a rdf:Statement ;
-    rdf:subject lgpc:0439 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0439> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0919 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0919> ;
 .
 
-:s146
+<146>
     a rdf:Statement ;
-    rdf:subject lgpc:0990 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0990> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0490 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0490> ;
 .
 
-:s147
+<147>
     a rdf:Statement ;
-    rdf:subject lgpc:08 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/08> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:08 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/08> ;
 .
 
-:s148
+<148>
     a rdf:Statement ;
-    rdf:subject lgpc:0920 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0920> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:0449 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0449> ;
 .
 
-:s149
+<149>
     a rdf:Statement ;
-    rdf:subject lgpc:0840 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0840> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0890 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0890> ;
 .
 
-:s150
+<150>
     a rdf:Statement ;
-    rdf:subject lgpc:0469 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0469> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:1120 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1120> ;
 .
 
-:s151
+<151>
     a rdf:Statement ;
-    rdf:subject lgpc:0827 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0827> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:0820 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0820> ;
 .
 
-:s152
+<152>
     a rdf:Statement ;
-    rdf:subject lgpc:0990 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0990> ;
     rdf:predicate skos:narrowMatch ;
-    rdf:object gpc:0439 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/0439> ;
 .
 
-:s153
+<153>
     a rdf:Statement ;
-    rdf:subject lgpc:0590 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0590> ;
     rdf:predicate skos:broadMatch ;
-    rdf:object gpc:1490 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1490> ;
 .
 
-:s154
+<154>
     a rdf:Statement ;
-    rdf:subject lgpc:0462 ;
+    rdf:subject <http://linked.data.gov.au/def/lgpc/0462> ;
     rdf:predicate skos:exactMatch ;
-    rdf:object gpc:1130 ;
-    dct:created "2019-07-10"^^xsd:date ;
-    loci:hadGenerationMethod :method ;
+    rdf:object <http://linked.data.gov.au/def/gpc/1130> ;
 .
